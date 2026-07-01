@@ -1,0 +1,216 @@
+.section {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── EDITORIAL SERVICES LIST ─────────────────────────────── */
+.servicesWrap {
+  padding: var(--section-padding) 0;
+  background: var(--black);
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--black-border);
+  flex-wrap: wrap;
+}
+
+.headerLeft {}
+
+.headerRight {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: gap var(--transition-base);
+}
+
+.viewAll:hover { gap: 1.25rem; }
+
+/* Service list rows */
+.serviceList {
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceRow {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--black-border);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.serviceRow::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.serviceRow:hover::after { transform: scaleX(1); }
+
+.serviceRow:hover .serviceNum { color: var(--gold); }
+.serviceRow:hover .serviceName { letter-spacing: 0.08em; }
+.serviceRow:hover .serviceArrow { transform: translateX(8px); opacity: 1; color: var(--gold); }
+
+.serviceNum {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--black-border);
+  transition: color var(--transition-base);
+  user-select: none;
+}
+
+.serviceMain {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.serviceName {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  transition: letter-spacing 0.4s ease;
+}
+
+.serviceTag {
+  display: inline-flex;
+  padding: 0.3rem 0.75rem;
+  background: rgba(212,148,10,0.1);
+  border: 1px solid rgba(212,148,10,0.25);
+  border-radius: var(--radius-full);
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.serviceArrow {
+  font-size: 1.5rem;
+  color: var(--gray-600);
+  transition: all var(--transition-base);
+  opacity: 0.5;
+}
+
+/* ── PHOTO BREAK (Fullbleed between services + why us) ───── */
+.photoBreak {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.photoBreakImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: brightness(0.6);
+  transform: scale(1.05);
+  transition: transform 8s ease;
+}
+
+.photoBreak:hover .photoBreakImg { transform: scale(1); }
+
+.photoBreakContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 4rem;
+  background: linear-gradient(to top, rgba(13,13,13,0.9) 0%, rgba(13,13,13,0.2) 60%, transparent 100%);
+}
+
+.photoBreakText {
+  max-width: 600px;
+}
+
+.photoBreakEyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.photoBreakHeadline {
+  font-family: var(--font-ui);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.photoBreakCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  padding-bottom: 4px;
+  transition: all var(--transition-base);
+}
+
+.photoBreakCta:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .header { flex-direction: column; align-items: flex-start; }
+  .headerRight { text-align: left; }
+  .serviceRow { grid-template-columns: 50px 1fr auto; gap: 1rem; }
+  .serviceName { font-size: 1.2rem; }
+  .serviceTag { display: none; }
+  .photoBreakContent { padding: 2rem; }
+}

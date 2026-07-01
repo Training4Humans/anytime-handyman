@@ -1,0 +1,332 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 175px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ── Media Background ───────────────────────────────────── */
+.mediaBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.fallbackBg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: #1a1a1a;
+}
+
+/* Top-only overlay - blends video into nav */
+.overlayTop {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13,13,13,0.55) 0%,
+    rgba(13,13,13,0) 25%
+  );
+  z-index: 1;
+}
+
+/* Hidden - no bottom or left darkening */
+.overlayBottom,
+.overlayLeft {
+  display: none;
+}
+
+/* ── Logo Overlay ──────────────────────────────────────── */
+.logoOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logoOverlayImg {
+  width: clamp(150px, 16vw, 240px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 24px rgba(0,0,0,0.5));
+  animation: logoFade 14.7s ease-in-out infinite;
+}
+
+@keyframes logoFade {
+  0%        { opacity: 0; }
+  78%       { opacity: 0; }
+  85%       { opacity: 1; }
+  95%       { opacity: 1; }
+  100%      { opacity: 0; }
+}
+
+
+/* ── Content ────────────────────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 7rem;
+  padding-bottom: 6rem;
+}
+
+.inner {
+  max-width: 700px;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 1rem;
+  background: rgba(212, 148, 10, 0.15);
+  border: 1px solid rgba(212, 148, 10, 0.4);
+  border-radius: 999px;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+/* Headline */
+.headline {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+
+.script {
+  font-size: clamp(3rem, 7vw, 5.5rem) !important;
+  color: var(--gold);
+  margin-bottom: -0.5rem;
+  text-shadow: 0 2px 20px rgba(212,148,10,0.3);
+}
+
+.mainLine {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  line-height: 0.9;
+  text-shadow: 0 4px 40px rgba(0,0,0,0.5);
+}
+
+/* Subtitle */
+.sub {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+}
+
+/* CTAs */
+.ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+/* Trust strip */
+.trust {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ── Scroll Indicator ───────────────────────────────────── */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  animation: bobUp 2s ease-in-out infinite;
+}
+
+@keyframes bobUp {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+}
+
+.scrollMouse {
+  width: 22px;
+  height: 36px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.scrollWheel {
+  width: 3px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 2px;
+  animation: scrollWheel 2s ease-in-out infinite;
+}
+
+@keyframes scrollWheel {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(12px); opacity: 0; }
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .hero {
+    aspect-ratio: unset;
+    height: 100dvh;       /* dynamic viewport height, handles mobile browsers */
+    width: 100%;
+    align-items: flex-end;
+  }
+
+  /* Video fills the screen in portrait crop */
+  .video {
+    object-fit: cover;
+    object-position: center center;
+    /* Force portrait crop from landscape source */
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Hide all text / CTA content — video is the full story */
+  .content { display: none; }
+  .scrollIndicator { display: none; }
+
+  /* Show a subtle gradient at the bottom for the floating CTA */
+  .overlayBottom {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 220px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+    z-index: 2;
+  }
+
+  /* Keep the logo overlay but center it */
+  .logoOverlayImg {
+    width: clamp(140px, 40vw, 200px);
+  }
+}
+
+.trustIcon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ── Mobile Floating CTA Bar ────────────────────────────── */
+.mobileCta {
+  display: none; /* hidden on desktop */
+}
+
+@media (max-width: 640px) {
+  .mobileCta {
+    display: flex;
+    position: absolute;
+    bottom: 2.5rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    z-index: 10;
+    gap: 0.75rem;
+  }
+
+  .mobileCtaCall {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--gold);
+    color: var(--black);
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.875rem 1rem;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 20px rgba(212,148,10,0.4);
+  }
+
+  .mobileCtaQuote {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.875rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+}

@@ -1,0 +1,614 @@
+/* ── Projects Gallery Page ────────────────────────────────── */
+
+.main {
+  background: var(--black);
+  min-height: 100vh;
+}
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 62vh;
+  min-height: 460px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* 4-panel collage */
+.heroCollage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.heroPanel {
+  position: relative;
+  overflow: hidden;
+}
+
+.heroPanelImg {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 8s ease;
+}
+
+.hero:hover .heroPanelImg {
+  transform: scale(1.04);
+}
+
+.heroPanelOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13,13,13,0.45);
+}
+
+/* thin vertical dividers between panels */
+.heroPanel + .heroPanel {
+  border-left: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Dark gradient over whole collage so text reads clearly */
+.heroGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13,13,13,0.2) 0%,
+    rgba(13,13,13,0.65) 100%
+  );
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+}
+
+.heroEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.eyebrowDot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.heroTitle span { color: var(--gold); }
+
+.heroSub {
+  font-size: 1rem;
+  color: var(--gray-400);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.heroCount {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-800);
+}
+
+/* ── Gallery ─────────────────────────────────────────────── */
+.gallery {
+  padding: var(--section-padding) 0;
+}
+
+/* Filter row */
+.filterRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: 0.5rem 1.25rem;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.filterBtn:hover {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.filterBtnActive {
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold);
+}
+
+.filterCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.1);
+  color: inherit;
+  font-size: 0.6rem;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 99px;
+  padding: 0 5px;
+  margin-left: 0.4rem;
+}
+
+.filterBtnActive .filterCount {
+  background: rgba(0,0,0,0.2);
+}
+
+/* Category sections */
+.categorySections {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.categorySection {}
+
+.categoryHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.categoryTitle {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.categoryCount {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-800);
+}
+
+.categoryShowAll {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity var(--transition-base);
+}
+
+.categoryShowAll:hover { opacity: 0.7; }
+
+
+/* Loading */
+.loading {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 5rem 0;
+}
+
+.loadingDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: blink 1.2s infinite;
+}
+
+.loadingDot:nth-child(2) { animation-delay: 0.2s; }
+.loadingDot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* Empty */
+.empty {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.emptyText {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  color: var(--gray-800);
+}
+
+/* Project grid */
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.projectCard {
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--black-soft);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.projectCard:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.projectCard:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.cardImg {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.cardPhoto {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.projectCard:hover .cardPhoto {
+  transform: scale(1.05);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13,13,13,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.projectCard:hover .cardOverlay {
+  opacity: 1;
+}
+
+.cardViewBtn {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-sm);
+}
+
+.cardImgCount {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(0,0,0,0.7);
+  color: var(--white);
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.cardInfo {
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.cardCategory {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.cardDate {
+  font-size: 0.72rem;
+  color: var(--gray-800);
+  font-family: var(--font-ui);
+}
+
+/* ── Project Modal ────────────────────────────────────────── */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+  overflow-y: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.modalInner {
+  background: var(--black-soft);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 1100px;
+  padding: 3rem;
+  position: relative;
+  margin: auto;
+}
+
+.modalClose {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--gray-400);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.modalClose:hover {
+  background: rgba(255,255,255,0.12);
+  color: var(--white);
+}
+
+.modalHeader {
+  margin-bottom: 2.5rem;
+}
+
+.modalCategory {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.modalTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
+}
+
+.modalDesc {
+  font-size: 0.9rem;
+  color: var(--gray-400);
+  line-height: 1.7;
+  max-width: 600px;
+  margin-bottom: 0.5rem;
+}
+
+.modalDate {
+  font-size: 0.72rem;
+  color: var(--gray-800);
+  font-family: var(--font-ui);
+}
+
+/* Modal image grid */
+.modalGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.modalThumb {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(255,255,255,0.03);
+}
+
+.modalThumbPhoto {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.modalThumb:hover .modalThumbPhoto {
+  transform: scale(1.08);
+}
+
+.modalThumbOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.modalThumb:hover .modalThumbOverlay {
+  opacity: 1;
+}
+
+.modalThumbIcon {
+  font-size: 1.5rem;
+  color: var(--white);
+  line-height: 1;
+}
+
+/* ── Lightbox ─────────────────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.96);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--white);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background var(--transition-base);
+}
+
+.lightboxClose:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.lightboxImg {
+  position: relative;
+  width: 90vw;
+  height: 85vh;
+  max-width: 1400px;
+}
+
+.lightboxPhoto {
+  object-fit: contain;
+}
+
+.lightboxNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--white);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 1.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-base);
+  z-index: 10;
+  line-height: 1;
+}
+
+.lightboxNav:hover { background: rgba(255,255,255,0.15); }
+.lightboxPrev { left: 1.5rem; }
+.lightboxNext { right: 1.5rem; }
+
+.lightboxCounter {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  letter-spacing: 0.1em;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .projectGrid  { grid-template-columns: repeat(2, 1fr); }
+  .modalGrid    { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .projectGrid  { grid-template-columns: 1fr; }
+  .modalGrid    { grid-template-columns: repeat(2, 1fr); }
+  .modalInner   { padding: 2rem 1.25rem; }
+  .lightboxImg  { width: 98vw; height: 70vh; }
+  .lightboxNav  { width: 40px; height: 40px; }
+  .lightboxPrev { left: 0.5rem; }
+  .lightboxNext { right: 0.5rem; }
+}

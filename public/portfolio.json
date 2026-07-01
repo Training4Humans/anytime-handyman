@@ -1,0 +1,393 @@
+{
+  "generated": "2026-07-01T23:28:16.381Z",
+  "categoryCount": 9,
+  "projectCount": 18,
+  "imageCount": 88,
+  "categories": [
+    {
+      "id": "cabinets",
+      "slug": "cabinets",
+      "label": "Cabinets",
+      "order": 99,
+      "projectCount": 2,
+      "projects": [
+        {
+          "id": "cabinets--cabinets-001",
+          "slug": "cabinets-001",
+          "title": "Cabinets 001",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/cabinets/cabinets-001/98187827_267936937902685_6445478496511721472_n.jpg",
+          "images": [
+            "/projects/cabinets/cabinets-001/98187827_267936937902685_6445478496511721472_n.jpg",
+            "/projects/cabinets/cabinets-001/99420448_267937054569340_8257768134929285120_n.jpg",
+            "/projects/cabinets/cabinets-001/99557637_267937097902669_2112532449685667840_n.jpg",
+            "/projects/cabinets/cabinets-001/100576630_267937207902658_3958186867232342016_n.jpg",
+            "/projects/cabinets/cabinets-001/100690307_267936771236035_8995059903341002752_n.jpg"
+          ],
+          "imageCount": 5
+        },
+        {
+          "id": "cabinets--cabinets-002",
+          "slug": "cabinets-002",
+          "title": "Cabinets 002",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/cabinets/cabinets-002/73264421_148228766540170_1849711576798461952_n.jpg",
+          "images": [
+            "/projects/cabinets/cabinets-002/73264421_148228766540170_1849711576798461952_n.jpg",
+            "/projects/cabinets/cabinets-002/73276803_148228786540168_5392862478474412032_n.jpg",
+            "/projects/cabinets/cabinets-002/74165976_148228636540183_1817131917691060224_n.jpg",
+            "/projects/cabinets/cabinets-002/75282376_148228619873518_7579814694081265664_n.jpg"
+          ],
+          "imageCount": 4
+        }
+      ]
+    },
+    {
+      "id": "deck",
+      "slug": "deck",
+      "label": "Deck",
+      "order": 99,
+      "projectCount": 2,
+      "projects": [
+        {
+          "id": "deck--deck-001",
+          "slug": "deck-001",
+          "title": "Deck 001",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/deck/deck-001/729746761_1527059985876253_1871460627001263889_n.jpg",
+          "images": [
+            "/projects/deck/deck-001/729746761_1527059985876253_1871460627001263889_n.jpg",
+            "/projects/deck/deck-001/729768774_1527060062542912_7466808656012712755_n.jpg",
+            "/projects/deck/deck-001/Before.jpg"
+          ],
+          "imageCount": 3
+        },
+        {
+          "id": "deck--deck-002",
+          "slug": "deck-002",
+          "title": "Deck 002",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/deck/deck-002/139395627_446577686705275_1410206474486397585_n.jpg",
+          "images": [
+            "/projects/deck/deck-002/139395627_446577686705275_1410206474486397585_n.jpg",
+            "/projects/deck/deck-002/139771491_446577720038605_2437528272718703660_n.jpg",
+            "/projects/deck/deck-002/139828486_446577783371932_2059990109115365577_n.jpg",
+            "/projects/deck/deck-002/139843160_446577493371961_3446443501815827721_n.jpg",
+            "/projects/deck/deck-002/139851370_446577633371947_9177722740087972939_n.jpg",
+            "/projects/deck/deck-002/139903035_446577670038610_9192186875020850986_n.jpg",
+            "/projects/deck/deck-002/140010302_446577760038601_1028345508790311264_n.jpg",
+            "/projects/deck/deck-002/140028871_446577556705288_2599703028974025807_n.jpg"
+          ],
+          "imageCount": 8
+        }
+      ]
+    },
+    {
+      "id": "doors",
+      "slug": "doors",
+      "label": "Doors",
+      "order": 99,
+      "projectCount": 1,
+      "projects": [
+        {
+          "id": "doors--door-install",
+          "slug": "door-install",
+          "title": "Door Install",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/doors/door-install/87897743_206832724013107_7100446629601214464_n.jpg",
+          "images": [
+            "/projects/doors/door-install/87897743_206832724013107_7100446629601214464_n.jpg",
+            "/projects/doors/door-install/89088597_206832710679775_3144639384704253952_n.jpg"
+          ],
+          "imageCount": 2
+        }
+      ]
+    },
+    {
+      "id": "epoxy",
+      "slug": "epoxy",
+      "label": "Epoxy",
+      "order": 99,
+      "projectCount": 2,
+      "projects": [
+        {
+          "id": "epoxy--epoxy-001",
+          "slug": "epoxy-001",
+          "title": "Epoxy 001",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/epoxy/epoxy-001/131942657_431859698177074_7707002505857034281_n.jpg",
+          "images": [
+            "/projects/epoxy/epoxy-001/131942657_431859698177074_7707002505857034281_n.jpg",
+            "/projects/epoxy/epoxy-001/131997776_431859641510413_6971012380654470278_n.jpg",
+            "/projects/epoxy/epoxy-001/132000642_431859624843748_4544930551937730397_n.jpg",
+            "/projects/epoxy/epoxy-001/132384516_431859681510409_7068558698533703760_n.jpg",
+            "/projects/epoxy/epoxy-001/132597613_431859664843744_8753567685733539961_n.jpg"
+          ],
+          "imageCount": 5
+        },
+        {
+          "id": "epoxy--epoxy-002",
+          "slug": "epoxy-002",
+          "title": "Epoxy 002",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/epoxy/epoxy-002/71339537_137656467597400_6136313599355781120_n.jpg",
+          "images": [
+            "/projects/epoxy/epoxy-002/71339537_137656467597400_6136313599355781120_n.jpg",
+            "/projects/epoxy/epoxy-002/71553480_137656497597397_5359016559928934400_n.jpg",
+            "/projects/epoxy/epoxy-002/71580146_137656450930735_1118236130408398848_n.jpg",
+            "/projects/epoxy/epoxy-002/71644596_137656587597388_6529869943838605312_n.jpg",
+            "/projects/epoxy/epoxy-002/71808753_137656514264062_4008684086221602816_n.jpg",
+            "/projects/epoxy/epoxy-002/71828470_137656547597392_6512874264327094272_n.jpg"
+          ],
+          "imageCount": 6
+        }
+      ]
+    },
+    {
+      "id": "exterior",
+      "slug": "exterior",
+      "label": "Exterior",
+      "order": 99,
+      "projectCount": 3,
+      "projects": [
+        {
+          "id": "exterior--christmas-lights",
+          "slug": "christmas-lights",
+          "title": "Christmas Lights",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/exterior/christmas-lights/79893838_163668198329560_4197025351408287744_n.jpg",
+          "images": [
+            "/projects/exterior/christmas-lights/79893838_163668198329560_4197025351408287744_n.jpg"
+          ],
+          "imageCount": 1
+        },
+        {
+          "id": "exterior--porch-repair",
+          "slug": "porch-repair",
+          "title": "Porch Repair",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/exterior/porch-repair/71668849_138331757529871_7874285859577528320_n.jpg",
+          "images": [
+            "/projects/exterior/porch-repair/71668849_138331757529871_7874285859577528320_n.jpg",
+            "/projects/exterior/porch-repair/71704054_138331717529875_8023256787354386432_n.jpg",
+            "/projects/exterior/porch-repair/71866835_138331774196536_8831682164899708928_n.jpg",
+            "/projects/exterior/porch-repair/72390044_138331737529873_8170590233079840768_n.jpg"
+          ],
+          "imageCount": 4
+        },
+        {
+          "id": "exterior--stairs",
+          "slug": "stairs",
+          "title": "Stairs",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/exterior/stairs/176807829_505785460784497_8552051708518125448_n.jpg",
+          "images": [
+            "/projects/exterior/stairs/176807829_505785460784497_8552051708518125448_n.jpg",
+            "/projects/exterior/stairs/176907723_505785437451166_250958796282277162_n.jpg",
+            "/projects/exterior/stairs/177227857_505785470784496_6947256223293895968_n.jpg",
+            "/projects/exterior/stairs/177310507_505785427451167_4891617600022199981_n.jpg"
+          ],
+          "imageCount": 4
+        }
+      ]
+    },
+    {
+      "id": "fence",
+      "slug": "fence",
+      "label": "Fence",
+      "order": 99,
+      "projectCount": 3,
+      "projects": [
+        {
+          "id": "fence--fence-001",
+          "slug": "fence-001",
+          "title": "Fence 001",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/fence/fence-001/729797634_1527059822542936_4589132961004540774_n.jpg",
+          "images": [
+            "/projects/fence/fence-001/729797634_1527059822542936_4589132961004540774_n.jpg",
+            "/projects/fence/fence-001/729838729_1527059955876256_2264501736608235419_n.jpg",
+            "/projects/fence/fence-001/729855902_1527060012542917_1786461530479790852_n.jpg"
+          ],
+          "imageCount": 3
+        },
+        {
+          "id": "fence--fence-002",
+          "slug": "fence-002",
+          "title": "Fence 002",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/fence/fence-002/68755034_114931993203181_6842284589344358400_n.jpg",
+          "images": [
+            "/projects/fence/fence-002/68755034_114931993203181_6842284589344358400_n.jpg"
+          ],
+          "imageCount": 1
+        },
+        {
+          "id": "fence--staining-2020",
+          "slug": "staining-2020",
+          "title": "Staining 2020",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/fence/staining-2020/131959543_10157970019241478_3078810455534605151_n.jpg",
+          "images": [
+            "/projects/fence/staining-2020/131959543_10157970019241478_3078810455534605151_n.jpg",
+            "/projects/fence/staining-2020/132300520_10157970019296478_8724533738805085729_n.jpg",
+            "/projects/fence/staining-2020/132441437_10157970019176478_3155871772076424161_n.jpg",
+            "/projects/fence/staining-2020/140122928_10158020702156478_6262218629267445985_n.jpg",
+            "/projects/fence/staining-2020/home_remodeling_myths.jpg"
+          ],
+          "imageCount": 5
+        }
+      ]
+    },
+    {
+      "id": "flooring",
+      "slug": "flooring",
+      "label": "Flooring",
+      "order": 99,
+      "projectCount": 2,
+      "projects": [
+        {
+          "id": "flooring--floor-001",
+          "slug": "floor-001",
+          "title": "Floor 001",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/flooring/floor-001/668407527_1464726332109619_1539879138405178106_n.jpg",
+          "images": [
+            "/projects/flooring/floor-001/668407527_1464726332109619_1539879138405178106_n.jpg",
+            "/projects/flooring/floor-001/668498953_1464726318776287_3379987780979687795_n.jpg",
+            "/projects/flooring/floor-001/669847011_1464726392109613_794371612211881320_n.jpg",
+            "/projects/flooring/floor-001/670901844_1464726302109622_2957259591553634745_n.jpg",
+            "/projects/flooring/floor-001/726405582_1525042332744685_2709586477317202852_n.jpg",
+            "/projects/flooring/floor-001/727221274_1525042322744686_6075217637004038571_n.jpg",
+            "/projects/flooring/floor-001/727243691_1525042396078012_6697835351216335819_n.jpg",
+            "/projects/flooring/floor-001/727323564_1525042402744678_719874808211200091_n.jpg",
+            "/projects/flooring/floor-001/727364953_1525042289411356_1067228255302475141_n.jpg",
+            "/projects/flooring/floor-001/727704046_1525042296078022_7455133647048304005_n.jpg"
+          ],
+          "imageCount": 10
+        },
+        {
+          "id": "flooring--floor-002",
+          "slug": "floor-002",
+          "title": "Floor 002",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/flooring/floor-002/100629522_268497051180007_1295686943375360000_n.jpg",
+          "images": [
+            "/projects/flooring/floor-002/100629522_268497051180007_1295686943375360000_n.jpg",
+            "/projects/flooring/floor-002/100666552_268497117846667_7231934562287222784_n.jpg",
+            "/projects/flooring/floor-002/100679918_268497111180001_6143154039149297664_n.jpg",
+            "/projects/flooring/floor-002/100690310_268497107846668_7138884280502976512_n.jpg",
+            "/projects/flooring/floor-002/100744543_268497097846669_551605441554022400_n.jpg",
+            "/projects/flooring/floor-002/100776517_268497057846673_8659795537899290624_n.jpg"
+          ],
+          "imageCount": 6
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "slug": "general",
+      "label": "General",
+      "order": 99,
+      "projectCount": 1,
+      "projects": [
+        {
+          "id": "general--handyman-work-2021",
+          "slug": "handyman-work-2021",
+          "title": "Handyman Work 2021",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/general/handyman-work-2021/138046799_10158020702896478_5784655487922099955_n.jpg",
+          "images": [
+            "/projects/general/handyman-work-2021/138046799_10158020702896478_5784655487922099955_n.jpg",
+            "/projects/general/handyman-work-2021/139460767_10158020702441478_5802554056781956129_n.jpg",
+            "/projects/general/handyman-work-2021/139608532_10158020702686478_7507282097814762673_n.jpg",
+            "/projects/general/handyman-work-2021/139669948_10158020702146478_8733064686040562987_n.jpg",
+            "/projects/general/handyman-work-2021/139678661_10158022240036478_5102553193694252083_n.jpg",
+            "/projects/general/handyman-work-2021/139720612_10158020702861478_321969234470240273_n.jpg",
+            "/projects/general/handyman-work-2021/139740875_10158020702661478_3965535662233019716_n.jpg",
+            "/projects/general/handyman-work-2021/139770373_10158020702306478_5308464443094491757_n.jpg",
+            "/projects/general/handyman-work-2021/139781068_10158020702296478_6808046839631312592_n.jpg",
+            "/projects/general/handyman-work-2021/139859169_10158020702426478_8486026511007408444_n.jpg",
+            "/projects/general/handyman-work-2021/140034112_10158020702511478_5858466399907894304_n.jpg",
+            "/projects/general/handyman-work-2021/140122928_10158020702156478_6262218629267445985_n.jpg"
+          ],
+          "imageCount": 12
+        }
+      ]
+    },
+    {
+      "id": "pool",
+      "slug": "pool",
+      "label": "Pool",
+      "order": 99,
+      "projectCount": 2,
+      "projects": [
+        {
+          "id": "pool--pool-assembly",
+          "slug": "pool-assembly",
+          "title": "Pool Assembly",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/pool/pool-assembly/68926918_114934273202953_41486111314280448_n.jpg",
+          "images": [
+            "/projects/pool/pool-assembly/68926918_114934273202953_41486111314280448_n.jpg",
+            "/projects/pool/pool-assembly/69098037_114934066536307_6752325983933562880_n.jpg",
+            "/projects/pool/pool-assembly/69315715_114933599869687_7720031714004697088_n.jpg"
+          ],
+          "imageCount": 3
+        },
+        {
+          "id": "pool--pool-decks",
+          "slug": "pool-decks",
+          "title": "Pool Decks",
+          "description": "",
+          "date": "",
+          "tags": [],
+          "cover": "/projects/pool/pool-decks/121200286_374918603871184_2755555469252233196_n.jpg",
+          "images": [
+            "/projects/pool/pool-decks/121200286_374918603871184_2755555469252233196_n.jpg",
+            "/projects/pool/pool-decks/121246955_374918157204562_6295692776470596100_n.jpg",
+            "/projects/pool/pool-decks/121260107_374918120537899_3122969558327117287_n.jpg",
+            "/projects/pool/pool-decks/121274310_374917760537935_8938383712726349497_n.jpg",
+            "/projects/pool/pool-decks/121298765_374917753871269_3535446850327928650_n.jpg",
+            "/projects/pool/pool-decks/121328000_374918137204564_229349166729762098_n.jpg"
+          ],
+          "imageCount": 6
+        }
+      ]
+    }
+  ]
+}

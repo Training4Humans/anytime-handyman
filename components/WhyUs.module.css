@@ -1,0 +1,224 @@
+.section {
+  position: relative;
+  background: var(--black-soft);
+}
+
+.splitLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* ── Image Pane ─────────────────────────────────────────── */
+.imagePane {
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 8s ease;
+}
+
+.imagePane:hover .image {
+  transform: scale(1.04);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(13,13,13,0.3) 0%,
+    rgba(13,13,13,0.1) 100%
+  );
+  z-index: 1;
+}
+
+.floatingBadge {
+  position: absolute;
+  bottom: 3rem;
+  right: -1px;
+  z-index: 2;
+  background: var(--gold);
+  color: var(--black);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.badgeYear {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.badgeNum {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.badgeCity {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* ── Content Pane ───────────────────────────────────────── */
+.contentPane {
+  display: flex;
+  align-items: center;
+  padding: 6rem 5rem;
+  background: var(--black-soft);
+}
+
+.content {
+  width: 100%;
+  max-width: 520px;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.05;
+  margin: 1rem 0 1.5rem;
+}
+
+.italic {
+  font-style: italic;
+  color: var(--gold);
+  font-family: var(--font-script);
+  font-size: 1.2em;
+  text-transform: none;
+  font-weight: 400;
+}
+
+.divider {
+  width: 50px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 1.75rem;
+}
+
+.body {
+  font-size: 1rem;
+  color: var(--gray-400);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid var(--black-border);
+  border-bottom: 1px solid var(--black-border);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.statNum {
+  font-family: var(--font-ui);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.72rem;
+  color: var(--gray-600);
+  line-height: 1.4;
+}
+
+/* Pillars - text list */
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.pillarDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 0.45rem;
+}
+
+.pillarTitle {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  margin-bottom: 0.1rem;
+}
+
+.pillarSub {
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 3px;
+  transition: gap var(--transition-base);
+}
+
+.cta:hover { gap: 1.25rem; }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .splitLayout { grid-template-columns: 1fr; }
+  .imagePane { min-height: 50vh; }
+  .contentPane { padding: 4rem var(--container-pad); }
+  .content { max-width: 100%; }
+  .floatingBadge { right: 2rem; bottom: 2rem; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
