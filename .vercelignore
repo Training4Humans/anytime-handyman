@@ -1,0 +1,6 @@
+# Exclude large unused video files — only the production video is needed
+public/videos/hero-video1288bc5.autosave.mp4
+public/videos/hero-video2.mp4
+public/videos/hero-video.tscproj/
+public/Old Site Files/
+public/New Project Files/
