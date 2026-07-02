@@ -109,6 +109,37 @@
   background: rgba(212,148,10,0.08);
 }
 
+/* Active link + pencil circle */
+.navItem {
+  position: relative;
+}
+
+.linkActive {
+  color: var(--gold) !important;
+}
+
+.pencilCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 32px);
+  height: calc(100% + 22px);
+  pointer-events: none;
+  overflow: visible;
+}
+
+.pencilPath {
+  stroke-dasharray: 450;
+  stroke-dashoffset: 450;
+  animation: drawPencilCircle 0.55s ease-out forwards;
+  animation-delay: 0.08s;
+}
+
+@keyframes drawPencilCircle {
+  to { stroke-dashoffset: 0; }
+}
+
 .ctaBtn {
   flex-shrink: 0;
   font-size: 0.8rem !important;

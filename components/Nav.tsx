@@ -16,6 +16,9 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+const isActive = (href: string, pathname: string) =>
+  href === "/" ? pathname === "/" : pathname.startsWith(href);
+
 export default function Nav() {
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
@@ -72,11 +75,20 @@ export default function Nav() {
 
           {/* Desktop Links */}
           <ul className={styles.links}>
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className={styles.link}>{link.label}</Link>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const active = isActive(link.href, pathname);
+              return (
+                <li key={link.href} className={styles.navItem}>
+                  <Link
+                    href={link.href}
+                    className={`${styles.link} ${active ? styles.linkActive : ""}`}
+                  >
+                    {link.label}
+                  </Link>
+                  {active && <PencilCircle key={pathname} />}
+                </li>
+              );
+            })}
           </ul>
 
           {/* Desktop CTA */}
@@ -164,5 +176,48 @@ export default function Nav() {
         <div className={styles.overlay} onClick={() => setMenuOpen(false)} />
       )}
     </>
+  );
+}
+
+/* ── Pencil circle: active-page indicator ─────────────────── */
+function PencilCircle() {
+  return (
+    <svg
+      className={styles.pencilCircle}
+      viewBox="0 0 200 56"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <filter id="nav-pencil-rough" x="-12%" y="-25%" width="124%" height="150%">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.04 0.08"
+            numOctaves="3"
+            seed="7"
+            result="noise"
+          />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="noise"
+            scale="3.5"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+        </filter>
+      </defs>
+      {/* Slightly wobbly oval — never a perfect ellipse */}
+      <path
+        d="M 22,27 C 17,9 40,1 70,1 C 103,1 152,3 174,11 C 190,17 199,26 193,38 C 187,51 160,57 126,58 C 86,59 44,57 22,50 C 8,45 7,43 22,27"
+        stroke="var(--gold)"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+        filter="url(#nav-pencil-rough)"
+        className={styles.pencilPath}
+      />
+    </svg>
   );
 }
