@@ -295,25 +295,26 @@
   }
 
   .mobileCtaCall {
-    flex: 1;
+    flex: 0.9;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     background: var(--gold);
     color: var(--black);
     font-family: var(--font-ui);
-    font-size: 0.875rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 0.875rem 1rem;
+    white-space: nowrap;
+    padding: 0.875rem 0.75rem;
     border-radius: var(--radius-sm);
     box-shadow: 0 4px 20px rgba(212,148,10,0.4);
   }
 
   .mobileCtaQuote {
-    flex: 1;
+    flex: 1.1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -321,12 +322,14 @@
     backdrop-filter: blur(10px);
     color: var(--white);
     font-family: var(--font-ui);
-    font-size: 0.875rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 0.875rem 1rem;
+    white-space: nowrap;
+    padding: 0.875rem 0.75rem;
     border-radius: var(--radius-sm);
     border: 1px solid rgba(255,255,255,0.25);
   }
 }
+
