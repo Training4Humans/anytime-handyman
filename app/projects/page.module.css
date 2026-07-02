@@ -411,7 +411,8 @@
 .carouselSlide {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
+  max-height: 380px;
   overflow: hidden;
   border-radius: var(--radius-sm);
   cursor: zoom-in;
@@ -548,8 +549,8 @@
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-md);
   width: 100%;
-  max-width: 1100px;
-  padding: 3rem;
+  max-width: 700px;
+  padding: 2.5rem;
   position: relative;
   margin: auto;
 }
