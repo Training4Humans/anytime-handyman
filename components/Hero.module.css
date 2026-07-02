@@ -298,7 +298,11 @@
   .scrollIndicator {
     bottom: 8rem;
     font-size: 0.6rem;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,1);
+  }
+
+  .scrollMouse {
+    border-color: rgba(255,255,255,0.9);
   }
 
   .mobileCtaCall {
