@@ -1,13 +1,14 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
+import CountUp from "./CountUp";
 import styles from "./WhyUs.module.css";
 
 const stats = [
-  { num: "2019", label: "Founded in Austin" },
-  { num: "200+", label: "Homes Served" },
-  { num: "100%", label: "Satisfaction Rate" },
-  { num: "1 Call", label: "Handles Everything" },
+  { countUp: true, target: 2019, from: 2010, suffix: "",  label: "Founded in Austin" },
+  { countUp: true, target: 200,  from: 0,    suffix: "+", label: "Homes Served" },
+  { countUp: true, target: 100,  from: 0,    suffix: "%", label: "Satisfaction Rate" },
+  { countUp: false, display: "1 Call",                    label: "Handles Everything" },
 ];
 
 export default function WhyUs() {
@@ -61,7 +62,13 @@ export default function WhyUs() {
             <div className={styles.stats}>
               {stats.map((s) => (
                 <div key={s.label} className={styles.stat}>
-                  <span className={styles.statNum}>{s.num}</span>
+                  <span className={styles.statNum}>
+                    {s.countUp ? (
+                      <CountUp target={s.target!} from={s.from} suffix={s.suffix} duration={2000} />
+                    ) : (
+                      s.display
+                    )}
+                  </span>
                   <span className={styles.statLabel}>{s.label}</span>
                 </div>
               ))}
