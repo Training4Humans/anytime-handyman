@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 
@@ -42,11 +42,10 @@ interface Portfolio {
 
 /* ── Component ───────────────────────────────────────────── */
 export default function ProjectsPage() {
-  const [portfolio, setPortfolio]           = useState<Portfolio | null>(null);
-  const [activeCategory, setActiveCategory] = useState<string>("all");
-  const [activeProject, setActiveProject]   = useState<Project | null>(null);
-  const [modalSlide, setModalSlide]         = useState<number>(0);
-  const [lightbox, setLightbox]             = useState<{ project: Project; imgIndex: number } | null>(null);
+  const [portfolio, setPortfolio]         = useState<Portfolio | null>(null);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [modalSlide, setModalSlide]       = useState<number>(0);
+  const [lightbox, setLightbox]           = useState<{ project: Project; imgIndex: number } | null>(null);
 
   useEffect(() => {
     fetch("/portfolio.json")
@@ -86,13 +85,6 @@ export default function ProjectsPage() {
     if (Math.abs(dx) > 40) dx > 0 ? swipeNext() : swipePrev();
     setTouchStartX(null);
   };
-
-  // All projects flattened for "all" view
-  const allProjects = portfolio?.categories.flatMap((c) => c.projects) ?? [];
-
-  const visibleProjects = activeCategory === "all"
-    ? allProjects
-    : portfolio?.categories.find((c) => c.id === activeCategory)?.projects ?? [];
 
   const formatDate = (d: string) => {
     if (!d) return "";
@@ -140,16 +132,16 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* ── Gallery ───────────────────────────────────────────── */}
-      <section className={styles.gallery}>
+      {/* ── Gallery: Netflix Rows ─────────────────────────────── */}
+      <section className={styles.gallery} id="gallery-top">
         <div className="container">
 
-          {/* Category tabs */}
+          {/* Jump-nav tabs */}
           {portfolio && portfolio.categories.length > 0 && (
             <div className={styles.filterRow}>
               <button
-                className={`${styles.filterBtn} ${activeCategory === "all" ? styles.filterBtnActive : ""}`}
-                onClick={() => setActiveCategory("all")}
+                className={`${styles.filterBtn} ${styles.filterBtnActive}`}
+                onClick={() => document.getElementById("gallery-top")?.scrollIntoView({ behavior: "smooth" })}
                 id="filter-all"
               >
                 All Projects
@@ -158,8 +150,8 @@ export default function ProjectsPage() {
               {portfolio.categories.map((cat) => (
                 <button
                   key={cat.id}
-                  className={`${styles.filterBtn} ${activeCategory === cat.id ? styles.filterBtnActive : ""}`}
-                  onClick={() => setActiveCategory(cat.id)}
+                  className={styles.filterBtn}
+                  onClick={() => document.getElementById(`row-${cat.id}`)?.scrollIntoView({ behavior: "smooth", block: "start" })}
                   id={`filter-${cat.id}`}
                 >
                   {cat.label}
@@ -178,55 +170,14 @@ export default function ProjectsPage() {
             </div>
           )}
 
-          {/* Category sections when viewing "all" */}
-          {portfolio && activeCategory === "all" && (
-            <div className={styles.categorySections}>
-              {portfolio.categories.map((cat) => (
-                <div key={cat.id} className={styles.categorySection}>
-                  <div className={styles.categoryHeader}>
-                    <h2 className={styles.categoryTitle}>{cat.label}</h2>
-                    <span className={styles.categoryCount}>
-                      {cat.projectCount} project{cat.projectCount !== 1 ? "s" : ""}
-                    </span>
-                    {cat.projectCount > 3 && (
-                      <button
-                        className={styles.categoryShowAll}
-                        onClick={() => setActiveCategory(cat.id)}
-                      >
-                        View all →
-                      </button>
-                    )}
-                  </div>
-                  <div className={styles.projectGrid}>
-                    {cat.projects.slice(0, 3).map((project) => (
-                      <ProjectCard
-                        key={project.id}
-                        project={project}
-                        categoryLabel={cat.label}
-                        onClick={() => setActiveProject(project)}
-                        formatDate={formatDate}
-                      />
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* Single category view */}
-          {portfolio && activeCategory !== "all" && (
-            <div className={styles.projectGrid}>
-              {visibleProjects.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  categoryLabel={portfolio.categories.find(c => c.id === activeCategory)?.label ?? ""}
-                  onClick={() => setActiveProject(project)}
-                  formatDate={formatDate}
-                />
-              ))}
-            </div>
-          )}
+          {/* Netflix rows */}
+          {portfolio && portfolio.categories.map((cat) => (
+            <RowSection
+              key={cat.id}
+              cat={cat}
+              onProjectClick={setActiveProject}
+            />
+          ))}
 
         </div>
       </section>
@@ -343,6 +294,46 @@ export default function ProjectsPage() {
       )}
 
     </main>
+  );
+}
+
+/* ── RowSection sub-component ─────────────────────────────── */
+function RowSection({ cat, onProjectClick }: { cat: Category; onProjectClick: (p: Project) => void }) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const scroll   = (dir: "left" | "right") => {
+    trackRef.current?.scrollBy({ left: dir === "right" ? 700 : -700, behavior: "smooth" });
+  };
+  return (
+    <div className={styles.row} id={`row-${cat.id}`}>
+      <div className={styles.rowHeader}>
+        <h2 className={styles.rowTitle}>{cat.label}</h2>
+        <span className={styles.rowCount}>{cat.projectCount} project{cat.projectCount !== 1 ? "s" : ""}</span>
+      </div>
+      <div className={styles.rowWrap}>
+        <button className={`${styles.rowArrow} ${styles.rowArrowLeft}`}  onClick={() => scroll("left")}  aria-label="Scroll left">‹</button>
+        <div className={styles.rowTrack} ref={trackRef}>
+          {cat.projects.map((project) => (
+            <div
+              key={project.id}
+              className={styles.rowCard}
+              onClick={() => onProjectClick(project)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === "Enter" && onProjectClick(project)}
+              id={`project-${project.id}`}
+            >
+              <Image src={project.cover} alt={project.title} fill className={styles.rowCardPhoto} sizes="280px" />
+              <div className={styles.rowCardGrad} />
+              <div className={styles.rowCardInfo}>
+                <p className={styles.rowCardTitle}>{project.title}</p>
+                <span className={styles.rowCardMeta}>{project.imageCount} photo{project.imageCount !== 1 ? "s" : ""}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <button className={`${styles.rowArrow} ${styles.rowArrowRight}`} onClick={() => scroll("right")} aria-label="Scroll right">›</button>
+      </div>
+    </div>
   );
 }
 
