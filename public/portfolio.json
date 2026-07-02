@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-02T20:04:58.725Z",
+  "generated": "2026-07-02T20:13:58.615Z",
   "categoryCount": 8,
   "projectCount": 17,
-  "imageCount": 72,
+  "imageCount": 71,
   "categories": [
     {
       "id": "cabinets",
@@ -45,12 +45,12 @@
               "isBefore": false
             },
             {
-              "src": "/projects/cabinets/cabinets-002/003_cabinets_a.jpg",
-              "isBefore": false
+              "src": "/projects/cabinets/cabinets-002/003_cabinets_b.jpg",
+              "isBefore": true
             },
             {
-              "src": "/projects/cabinets/cabinets-002/004_cabinets_a.jpg",
-              "isBefore": false
+              "src": "/projects/cabinets/cabinets-002/004_cabinets_b.jpg",
+              "isBefore": true
             }
           ],
           "imageCount": 4
@@ -142,8 +142,8 @@
               "isBefore": false
             },
             {
-              "src": "/projects/deck/deck-001/002_deck_a.jpg",
-              "isBefore": false
+              "src": "/projects/deck/deck-001/002_deck_b.jpg",
+              "isBefore": true
             },
             {
               "src": "/projects/deck/deck-001/003_deck_a.jpg",
@@ -187,10 +187,6 @@
               "isBefore": false
             },
             {
-              "src": "/projects/deck/deck-002/003_deck_a.jpg",
-              "isBefore": false
-            },
-            {
               "src": "/projects/deck/deck-002/004_deck_a.jpg",
               "isBefore": false
             },
@@ -211,7 +207,7 @@
               "isBefore": false
             }
           ],
-          "imageCount": 8
+          "imageCount": 7
         }
       ]
     },

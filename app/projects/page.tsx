@@ -1,10 +1,5 @@
 "use client";
 
-const HERO_IMAGES = [
-  { src: "/projects/epoxy/epoxy-001/131942657_431859698177074_7707002505857034281_n.jpg", alt: "Epoxy floor" },
-  { src: "/projects/deck/deck-002/139395627_446577686705275_1410206474486397585_n.jpg",   alt: "Deck build" },
-  { src: "/projects/flooring/floor-001/668407527_1464726332109619_1539879138405178106_n.jpg", alt: "Flooring install" },
-  { src: "/projects/cabinets/cabinets-001/100576630_267937207902658_3958186867232342016_n.jpg", alt: "Cabinet install" },
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
