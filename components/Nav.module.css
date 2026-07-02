@@ -3,9 +3,9 @@
   background: var(--gold);
   color: var(--black);
   font-family: var(--font-ui);
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   position: sticky;
   top: 0;
@@ -24,7 +24,9 @@
 
 .topPhone {
   color: var(--black);
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   transition: opacity var(--transition-fast);
 }
 .topPhone:hover { opacity: 0.75; }

@@ -19,7 +19,7 @@ export const businessInfo = {
   },
 
   contact: {
-    phone: "512-731-5866",
+    phone: "(512) 731-5866",
     phoneHref: "tel:+15127315866",
     email: "quote@theanytimehandyman.com",
     whatsapp: "https://wa.me/15127315866",
