@@ -60,6 +60,8 @@ export default function MaintenancePromo() {
               that catches problems before they become expensive disasters.
             </p>
 
+            <p className={styles.maintenancePlansLabel}>Maintenance Plans</p>
+
             {/* What's included, minimal text list */}
             <div className={styles.included}>
               <p className={styles.includedLabel}>What&apos;s covered:</p>
