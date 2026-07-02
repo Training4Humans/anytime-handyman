@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-02T22:35:31.869Z",
+  "generated": "2026-07-02T22:36:57.292Z",
   "categoryCount": 7,
   "projectCount": 17,
   "imageCount": 69,
@@ -655,7 +655,7 @@
     {
       "id": "exterior",
       "slug": "exterior",
-      "label": "Exterior",
+      "label": "Misc Projects",
       "order": 7,
       "projectCount": 5,
       "projects": [
