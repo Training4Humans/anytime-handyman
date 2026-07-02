@@ -117,62 +117,77 @@
   letter-spacing: 2px;
 }
 
-/* Selector tabs */
-.tabs {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.tab {
+/* Slideshow wrapper */
+.slideshowWrap {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.6rem 1.25rem 0.6rem 0.6rem;
-  background: var(--black-card);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
   border: 1px solid var(--black-border);
-  border-radius: var(--radius-full);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 1.1rem;
   cursor: pointer;
   transition: all var(--transition-base);
 }
 
-.tab:hover {
+.arrow:hover {
   border-color: var(--gold);
+  color: var(--gold);
 }
 
-.tabActive {
-  border-color: var(--gold);
-  background: rgba(212,148,10,0.08);
+/* Fade transition */
+.quoteBlock {
+  flex: 1;
+  max-width: 900px;
+  position: relative;
+  padding-top: 2rem;
+  transition: opacity 0.3s ease;
 }
 
-.tabAvatar {
-  width: 28px;
-  height: 28px;
-  background: var(--gold-dark);
-  color: var(--black);
-  border-radius: 50%;
+.fading {
+  opacity: 0;
+}
+
+/* Dot indicators */
+.dots {
   display: flex;
-  align-items: center;
+  gap: 0.5rem;
   justify-content: center;
-  font-family: var(--font-ui);
-  font-size: 0.7rem;
-  font-weight: 700;
+  margin-top: 0.5rem;
 }
 
-.tabName {
-  font-family: var(--font-ui);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--gray-400);
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--black-border);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  padding: 0;
 }
 
-.tabActive .tabName { color: var(--gold); }
+.dotActive {
+  background: var(--gold);
+  width: 20px;
+  border-radius: 3px;
+}
 
 @media (max-width: 768px) {
   .header { flex-direction: column; align-items: flex-start; }
   .stars { margin-left: 0; }
   .quoteFooter { flex-wrap: wrap; }
+  .arrow { width: 36px; height: 36px; font-size: 0.9rem; }
+  .slideshowWrap { gap: 0.75rem; }
 }

@@ -1,11 +1,38 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import AnimatedSection from "./AnimatedSection";
 import { testimonials } from "@/config/testimonials";
 import styles from "./Testimonials.module.css";
 
+const INTERVAL = 5000; // ms between auto-advances
+
 export default function Testimonials() {
   const [active, setActive] = useState(0);
+  const [fading, setFading] = useState(false);
+  const total = testimonials.length;
+
+  const goTo = useCallback((index: number) => {
+    setFading(true);
+    setTimeout(() => {
+      setActive(index);
+      setFading(false);
+    }, 300);
+  }, []);
+
+  const prev = useCallback(() => {
+    goTo((active - 1 + total) % total);
+  }, [active, total, goTo]);
+
+  const next = useCallback(() => {
+    goTo((active + 1) % total);
+  }, [active, total, goTo]);
+
+  // Auto-advance
+  useEffect(() => {
+    const timer = setInterval(next, INTERVAL);
+    return () => clearInterval(timer);
+  }, [next]);
+
   const t = testimonials[active];
 
   return (
@@ -34,35 +61,53 @@ export default function Testimonials() {
           </div>
         </AnimatedSection>
 
-        {/* Big editorial quote */}
-        <AnimatedSection animation="fade-up" className={styles.quoteBlock}>
-          <div className={styles.openQuote}>&ldquo;</div>
-          <p className={styles.quoteText}>{t.text}</p>
-          <div className={styles.quoteFooter}>
-            <div className={styles.avatar}>{t.avatar}</div>
-            <div>
-              <p className={styles.name}>{t.name}</p>
-              <p className={styles.meta}>{t.location} · {t.service} · {t.date}</p>
-            </div>
-            <div className={styles.stars}>
-              {"★".repeat(t.rating)}
+        {/* Slideshow quote */}
+        <div className={styles.slideshowWrap}>
+          <button
+            className={styles.arrow}
+            onClick={prev}
+            aria-label="Previous review"
+            id="testimonial-prev"
+          >
+            ←
+          </button>
+
+          <div className={`${styles.quoteBlock} ${fading ? styles.fading : ""}`}>
+            <div className={styles.openQuote}>&ldquo;</div>
+            <p className={styles.quoteText}>{t.text}</p>
+            <div className={styles.quoteFooter}>
+              <div className={styles.avatar}>{t.avatar}</div>
+              <div>
+                <p className={styles.name}>{t.name}</p>
+                <p className={styles.meta}>{t.location} · {t.service} · {t.date}</p>
+              </div>
+              <div className={styles.stars}>
+                {"★".repeat(t.rating)}
+              </div>
             </div>
           </div>
-        </AnimatedSection>
 
-        {/* Selector tabs, minimal */}
-        <AnimatedSection animation="fade-up" className={styles.tabs}>
-          {testimonials.map((r, i) => (
+          <button
+            className={styles.arrow}
+            onClick={next}
+            aria-label="Next review"
+            id="testimonial-next"
+          >
+            →
+          </button>
+        </div>
+
+        {/* Dot indicators */}
+        <div className={styles.dots}>
+          {testimonials.map((_, i) => (
             <button
-              key={r.id}
-              className={`${styles.tab} ${i === active ? styles.tabActive : ""}`}
-              onClick={() => setActive(i)}
-            >
-              <span className={styles.tabAvatar}>{r.avatar}</span>
-              <span className={styles.tabName}>{r.name.split(" ")[0]}</span>
-            </button>
+              key={i}
+              className={`${styles.dot} ${i === active ? styles.dotActive : ""}`}
+              onClick={() => goTo(i)}
+              aria-label={`Go to review ${i + 1}`}
+            />
           ))}
-        </AnimatedSection>
+        </div>
 
       </div>
     </section>
