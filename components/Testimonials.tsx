@@ -64,9 +64,9 @@ export default function Testimonials() {
 
   return (
     <section className={styles.section} id="reviews">
-      <div className="container">
 
-        {/* Header */}
+      {/* Header stays inside container */}
+      <div className="container">
         <AnimatedSection animation="fade-up" className={styles.header}>
           <div>
             <p className="section-eyebrow">Client Reviews</p>
@@ -87,30 +87,32 @@ export default function Testimonials() {
             </div>
           </div>
         </AnimatedSection>
+      </div>
 
-        {/* Slideshow */}
-        <div className={styles.slideshowWrap}>
-          <button className={styles.arrow} onClick={prev} aria-label="Previous review" id="testimonial-prev">←</button>
+      {/* Slideshow OUTSIDE container — full width, self-centered */}
+      <div className={styles.slideshowWrap}>
+        <button className={styles.arrow} onClick={prev} aria-label="Previous review" id="testimonial-prev">←</button>
 
-          <div className={styles.slideClip}>
-            <div className={`${styles.quoteBlock} ${animClass}`}>
-              <div className={styles.openQuote}>&ldquo;</div>
-              <p className={styles.quoteText}>{t.text}</p>
-              <div className={styles.quoteFooter}>
-                <div className={styles.avatar}>{t.avatar}</div>
-                <div>
-                  <p className={styles.name}>{t.name}</p>
-                  <p className={styles.meta}>{t.location} · {t.service} · {t.date}</p>
-                </div>
-                <div className={styles.stars}>{"★".repeat(t.rating)}</div>
+        <div className={styles.slideClip}>
+          <div className={`${styles.quoteBlock} ${animClass}`}>
+            <div className={styles.openQuote}>&ldquo;</div>
+            <p className={styles.quoteText}>{t.text}</p>
+            <div className={styles.quoteFooter}>
+              <div className={styles.avatar}>{t.avatar}</div>
+              <div>
+                <p className={styles.name}>{t.name}</p>
+                <p className={styles.meta}>{t.location} · {t.service} · {t.date}</p>
               </div>
+              <div className={styles.stars}>{"★".repeat(t.rating)}</div>
             </div>
           </div>
-
-          <button className={styles.arrow} onClick={next} aria-label="Next review" id="testimonial-next">→</button>
         </div>
 
-        {/* Dot indicators */}
+        <button className={styles.arrow} onClick={next} aria-label="Next review" id="testimonial-next">→</button>
+      </div>
+
+      {/* Dots back inside container for alignment */}
+      <div className="container">
         <div className={styles.dots}>
           {testimonials.map((_, i) => (
             <button
@@ -121,8 +123,9 @@ export default function Testimonials() {
             />
           ))}
         </div>
-
       </div>
+
     </section>
   );
+
 }
