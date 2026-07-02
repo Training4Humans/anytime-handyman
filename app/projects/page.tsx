@@ -140,16 +140,16 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* ── Gallery ───────────────────────────────────────────── */}
-      <section className={styles.gallery}>
+      {/* ── Gallery: Magazine Layout ────────────────────────────── */}
+      <section className={styles.gallery} id="gallery-top">
         <div className="container">
 
-          {/* Category tabs */}
+          {/* Category jump-nav */}
           {portfolio && portfolio.categories.length > 0 && (
             <div className={styles.filterRow}>
               <button
-                className={`${styles.filterBtn} ${activeCategory === "all" ? styles.filterBtnActive : ""}`}
-                onClick={() => setActiveCategory("all")}
+                className={`${styles.filterBtn} ${styles.filterBtnActive}`}
+                onClick={() => document.getElementById("gallery-top")?.scrollIntoView({ behavior: "smooth" })}
                 id="filter-all"
               >
                 All Projects
@@ -158,8 +158,8 @@ export default function ProjectsPage() {
               {portfolio.categories.map((cat) => (
                 <button
                   key={cat.id}
-                  className={`${styles.filterBtn} ${activeCategory === cat.id ? styles.filterBtnActive : ""}`}
-                  onClick={() => setActiveCategory(cat.id)}
+                  className={styles.filterBtn}
+                  onClick={() => document.getElementById(`mag-${cat.id}`)?.scrollIntoView({ behavior: "smooth", block: "start" })}
                   id={`filter-${cat.id}`}
                 >
                   {cat.label}
@@ -178,55 +178,15 @@ export default function ProjectsPage() {
             </div>
           )}
 
-          {/* Category sections when viewing "all" */}
-          {portfolio && activeCategory === "all" && (
-            <div className={styles.categorySections}>
-              {portfolio.categories.map((cat) => (
-                <div key={cat.id} className={styles.categorySection}>
-                  <div className={styles.categoryHeader}>
-                    <h2 className={styles.categoryTitle}>{cat.label}</h2>
-                    <span className={styles.categoryCount}>
-                      {cat.projectCount} project{cat.projectCount !== 1 ? "s" : ""}
-                    </span>
-                    {cat.projectCount > 3 && (
-                      <button
-                        className={styles.categoryShowAll}
-                        onClick={() => setActiveCategory(cat.id)}
-                      >
-                        View all →
-                      </button>
-                    )}
-                  </div>
-                  <div className={styles.projectGrid}>
-                    {cat.projects.slice(0, 3).map((project) => (
-                      <ProjectCard
-                        key={project.id}
-                        project={project}
-                        categoryLabel={cat.label}
-                        onClick={() => setActiveProject(project)}
-                        formatDate={formatDate}
-                      />
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* Single category view */}
-          {portfolio && activeCategory !== "all" && (
-            <div className={styles.projectGrid}>
-              {visibleProjects.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  categoryLabel={portfolio.categories.find(c => c.id === activeCategory)?.label ?? ""}
-                  onClick={() => setActiveProject(project)}
-                  formatDate={formatDate}
-                />
-              ))}
-            </div>
-          )}
+          {/* Magazine sections */}
+          {portfolio && portfolio.categories.map((cat) => (
+            <MagazineSection
+              key={cat.id}
+              cat={cat}
+              onProjectClick={setActiveProject}
+              formatDate={formatDate}
+            />
+          ))}
 
         </div>
       </section>
@@ -343,6 +303,82 @@ export default function ProjectsPage() {
       )}
 
     </main>
+  );
+}
+
+/* ── MagazineSection sub-component ───────────────────────── */
+function MagazineSection({
+  cat, onProjectClick, formatDate,
+}: {
+  cat: Category;
+  onProjectClick: (p: Project) => void;
+  formatDate: (d: string) => string;
+}) {
+  const [feature, ...rest] = cat.projects;
+  const side = rest.slice(0, 2);
+  const overflow = rest.slice(2);
+
+  const CardOverlay = ({ project, large }: { project: Project; large?: boolean }) => (
+    <div className={large ? styles.magFeature : styles.magSideCard}
+      onClick={() => onProjectClick(project)}
+      role="button" tabIndex={0}
+      onKeyDown={(e) => e.key === "Enter" && onProjectClick(project)}
+      id={`project-${project.id}`}
+    >
+      <Image src={project.cover} alt={project.title} fill className={styles.magPhoto}
+        sizes={large ? "(max-width: 768px) 100vw, 65vw" : "(max-width: 768px) 100vw, 30vw"} />
+      <div className={styles.magGrad} />
+      <div className={styles.magInfo}>
+        {large && <span className={styles.magEyebrow}>{cat.label}</span>}
+        <h3 className={large ? styles.magTitle : styles.magSideTitle}>{project.title}</h3>
+        {large && project.description && <p className={styles.magDesc}>{project.description}</p>}
+        <span className={styles.magMeta}>
+          {project.imageCount} photo{project.imageCount !== 1 ? "s" : ""}
+          {project.date ? ` · ${formatDate(project.date)}` : ""}
+        </span>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className={styles.magSection} id={`mag-${cat.id}`}>
+      {/* Section header with divider */}
+      <div className={styles.magSectionHeader}>
+        <h2 className={styles.magSectionTitle}>{cat.label}</h2>
+        <span className={styles.magSectionCount}>{cat.projectCount} project{cat.projectCount !== 1 ? "s" : ""}</span>
+        <div className={styles.magDivider} />
+      </div>
+
+      {/* Feature + side layout */}
+      <div className={cat.projects.length === 1 ? styles.magLayoutSingle : styles.magLayout}>
+        <CardOverlay project={feature} large />
+        {side.length > 0 && (
+          <div className={styles.magSideCol}>
+            {side.map((p) => <CardOverlay key={p.id} project={p} />)}
+          </div>
+        )}
+      </div>
+
+      {/* Overflow grid for 4+ projects */}
+      {overflow.length > 0 && (
+        <div className={styles.magOverflow}>
+          {overflow.map((p) => (
+            <div key={p.id} className={styles.magOverflowCard}
+              onClick={() => onProjectClick(p)}
+              role="button" tabIndex={0}
+              onKeyDown={(e) => e.key === "Enter" && onProjectClick(p)}
+            >
+              <Image src={p.cover} alt={p.title} fill className={styles.magPhoto} sizes="30vw" />
+              <div className={styles.magGrad} />
+              <div className={styles.magInfo}>
+                <h3 className={styles.magSideTitle}>{p.title}</h3>
+                <span className={styles.magMeta}>{p.imageCount} photo{p.imageCount !== 1 ? "s" : ""}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
 
