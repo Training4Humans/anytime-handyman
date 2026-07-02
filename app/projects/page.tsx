@@ -131,7 +131,7 @@ export default function ProjectsPage() {
             <span>Gallery.</span>
           </h1>
           <p className={styles.heroSub}>
-            Every project tells a story. Browse our completed work across Austin and surrounding areas.
+            Every project tells a story. Browse a selection of our completed work across Austin and surrounding areas.
           </p>
           {portfolio && (
             <p className={styles.heroCount}>

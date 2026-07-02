@@ -115,7 +115,7 @@ const faqs = [
   },
   {
     q: "What if I need a repair that's not covered?",
-    a: "No problem — plan members receive 10–20% off all additional labor. We handle it at a priority rate.",
+    a: "No problem. Plan members receive 10–20% off all additional labor. We handle it at a priority rate.",
   },
   {
     q: "How do I schedule my visits?",
@@ -333,7 +333,7 @@ export default function MaintenancePage() {
                     className={`${styles.planCta} ${plan.highlight ? styles.planCtaGold : styles.planCtaOutline}`}
                     id={`plan-cta-${plan.id}`}
                   >
-                    Get Started — {plan.name}
+                    Get Started: {plan.name}
                   </a>
 
                   <ul className={styles.planFeatures}>

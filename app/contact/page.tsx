@@ -124,7 +124,7 @@ export default function ContactPage() {
             <p className={styles.snippetText}>
               &ldquo;Called on a Tuesday, they were at my house Wednesday morning. Fixed our leaking pipe and patched the drywall same day. Absolute pros.&rdquo;
             </p>
-            <p className={styles.snippetAuthor}>— Marcus T., Pflugerville</p>
+            <p className={styles.snippetAuthor}>Marcus T., Pflugerville</p>
           </div>
 
         </div>

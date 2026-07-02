@@ -60,7 +60,7 @@ export default function AboutPage() {
             <span>Driven by Craft.</span>
           </h1>
           <p className={styles.heroSub}>
-            A local handyman service built the right way — one honest job at a time.
+            A local handyman service built the right way, one honest job at a time.
           </p>
         </div>
       </section>
@@ -113,13 +113,13 @@ export default function AboutPage() {
             <div className={styles.bioDivider} />
             <p className={styles.bioText}>{businessInfo.owner.bio}</p>
             <p className={styles.bioText}>
-              Today, The Anytime Handyman serves homeowners across the greater Austin metro — from quick repairs to full home maintenance plans. Every job, no matter the size, gets the same level of attention and care.
+              Today, The Anytime Handyman serves homeowners across the greater Austin metro, from quick repairs to full home maintenance plans. Every job, no matter the size, gets the same level of attention and care.
             </p>
 
             {/* Placeholder notice */}
             <div className={styles.placeholderNotice}>
               <p className={styles.placeholderText}>
-                More content coming soon — photos, certifications, and team profiles.
+                More content coming soon: photos, certifications, and team profiles.
               </p>
             </div>
 
