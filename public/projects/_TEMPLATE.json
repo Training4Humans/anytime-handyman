@@ -1,0 +1,16 @@
+{
+  "_readme": "Copy this file to project.json inside any project folder. Remove this _readme line.",
+  "title": "Project Title",
+  "description": "2-3 sentences describing the scope of work, the challenge, and the outcome.",
+  "date": "2024-06",
+  "location": "Austin, TX",
+  "coverIndex": 0,
+  "beforeImages": [],
+  "materials": [
+    "Material or product used (e.g. LVP flooring, cedar wood, pool-grade epoxy)"
+  ],
+  "techniques": [
+    "Method or skill applied (e.g. tongue & groove installation, color-flake broadcast)"
+  ],
+  "tags": ["category", "keyword"]
+}

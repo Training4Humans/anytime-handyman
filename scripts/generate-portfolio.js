@@ -36,7 +36,8 @@
  *     "description": "Full stain and seal of 200ft cedar privacy fence.",
  *     "date":        "2024-03",
  *     "coverIndex":  0,
- *     "tags":        ["fence", "staining", "cedar"]
+ *     "tags":        ["fence", "staining", "cedar"],
+ *     "techniques":  ["Pressure washing", "Oil-based stain application", "Sealing"]
  *   }
  *
  * category.json (place in the category folder, all optional):
@@ -137,7 +138,11 @@ for (const catDir of categoryFolders) {
       title:       meta.title       ?? titleFromSlug(projDir.name),
       description: meta.description ?? "",
       date:        meta.date        ?? "",
+      location:    meta.location    ?? "",
       tags:        meta.tags        ?? [],
+      techniques:  meta.techniques  ?? [],
+      materials:   meta.materials   ?? [],
+      beforeImages: meta.beforeImages ?? [],
       cover:       `/projects/${catDir.name}/${projDir.name}/${images[coverIndex]}`,
       images:      images.map((f) => `/projects/${catDir.name}/${projDir.name}/${f}`),
       imageCount:  images.length,

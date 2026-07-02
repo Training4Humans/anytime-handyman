@@ -1,23 +1,72 @@
 {
-  "generated": "2026-07-01T23:28:16.381Z",
+  "generated": "2026-07-02T19:02:54.526Z",
   "categoryCount": 9,
-  "projectCount": 18,
-  "imageCount": 88,
+  "projectCount": 19,
+  "imageCount": 89,
   "categories": [
     {
       "id": "cabinets",
       "slug": "cabinets",
-      "label": "Cabinets",
-      "order": 99,
+      "label": "Cabinetry",
+      "order": 1,
       "projectCount": 2,
       "projects": [
         {
+          "id": "cabinets--cabinets-002",
+          "slug": "cabinets-002",
+          "title": "Cabinet Refresh & Hardware Upgrade",
+          "description": "Complete cabinet door replacement and hardware upgrade in a Round Rock home. New doors were fitted to existing boxes for a budget-friendly refresh that looks like a full remodel.",
+          "date": "2020-07",
+          "location": "Round Rock, TX",
+          "tags": [
+            "cabinets",
+            "carpentry",
+            "kitchen",
+            "refresh"
+          ],
+          "techniques": [
+            "Door fitting and hanging",
+            "Hinge adjustment",
+            "Hardware installation"
+          ],
+          "materials": [
+            "Replacement cabinet doors",
+            "Soft-close hinges",
+            "Bar-pull hardware"
+          ],
+          "beforeImages": [],
+          "cover": "/projects/cabinets/cabinets-002/73264421_148228766540170_1849711576798461952_n.jpg",
+          "images": [
+            "/projects/cabinets/cabinets-002/73264421_148228766540170_1849711576798461952_n.jpg",
+            "/projects/cabinets/cabinets-002/73276803_148228786540168_5392862478474412032_n.jpg",
+            "/projects/cabinets/cabinets-002/74165976_148228636540183_1817131917691060224_n.jpg",
+            "/projects/cabinets/cabinets-002/75282376_148228619873518_7579814694081265664_n.jpg"
+          ],
+          "imageCount": 4
+        },
+        {
           "id": "cabinets--cabinets-001",
           "slug": "cabinets-001",
-          "title": "Cabinets 001",
-          "description": "",
-          "date": "",
-          "tags": [],
+          "title": "Custom Cabinet Installation",
+          "description": "Full custom cabinet build and install in a South Austin kitchen. New face frames, doors, and hardware throughout — transforming outdated cabinetry into a clean, modern workspace.",
+          "date": "2020-06",
+          "location": "South Austin, TX",
+          "tags": [
+            "cabinets",
+            "carpentry",
+            "kitchen"
+          ],
+          "techniques": [
+            "Custom carpentry",
+            "Face frame construction",
+            "Hardware installation"
+          ],
+          "materials": [
+            "Solid wood face frames",
+            "Shaker-style cabinet doors",
+            "Brushed nickel hardware"
+          ],
+          "beforeImages": [],
           "cover": "/projects/cabinets/cabinets-001/98187827_267936937902685_6445478496511721472_n.jpg",
           "images": [
             "/projects/cabinets/cabinets-001/98187827_267936937902685_6445478496511721472_n.jpg",
@@ -27,39 +76,43 @@
             "/projects/cabinets/cabinets-001/100690307_267936771236035_8995059903341002752_n.jpg"
           ],
           "imageCount": 5
-        },
-        {
-          "id": "cabinets--cabinets-002",
-          "slug": "cabinets-002",
-          "title": "Cabinets 002",
-          "description": "",
-          "date": "",
-          "tags": [],
-          "cover": "/projects/cabinets/cabinets-002/73264421_148228766540170_1849711576798461952_n.jpg",
-          "images": [
-            "/projects/cabinets/cabinets-002/73264421_148228766540170_1849711576798461952_n.jpg",
-            "/projects/cabinets/cabinets-002/73276803_148228786540168_5392862478474412032_n.jpg",
-            "/projects/cabinets/cabinets-002/74165976_148228636540183_1817131917691060224_n.jpg",
-            "/projects/cabinets/cabinets-002/75282376_148228619873518_7579814694081265664_n.jpg"
-          ],
-          "imageCount": 4
         }
       ]
     },
     {
       "id": "deck",
       "slug": "deck",
-      "label": "Deck",
-      "order": 99,
+      "label": "Decks",
+      "order": 2,
       "projectCount": 2,
       "projects": [
         {
           "id": "deck--deck-001",
           "slug": "deck-001",
-          "title": "Deck 001",
-          "description": "",
-          "date": "",
-          "tags": [],
+          "title": "Backyard Deck Build",
+          "description": "New ground-level backyard deck built from scratch in Pflugerville. Framing, decking boards, and railing installed in a single weekend — giving the homeowner a functional outdoor living space.",
+          "date": "2025-03",
+          "location": "Pflugerville, TX",
+          "tags": [
+            "deck",
+            "exterior",
+            "carpentry",
+            "outdoor"
+          ],
+          "techniques": [
+            "Deck framing",
+            "Joist layout",
+            "Ledger board attachment",
+            "Railing installation"
+          ],
+          "materials": [
+            "Pressure-treated lumber",
+            "Composite decking boards",
+            "Post-mount railing"
+          ],
+          "beforeImages": [
+            2
+          ],
           "cover": "/projects/deck/deck-001/729746761_1527059985876253_1871460627001263889_n.jpg",
           "images": [
             "/projects/deck/deck-001/729746761_1527059985876253_1871460627001263889_n.jpg",
@@ -71,10 +124,28 @@
         {
           "id": "deck--deck-002",
           "slug": "deck-002",
-          "title": "Deck 002",
-          "description": "",
-          "date": "",
-          "tags": [],
+          "title": "Elevated Deck Renovation",
+          "description": "Full tear-out and rebuild of a deteriorating elevated deck in Cedar Park. Rotted joists and boards replaced with new pressure-treated framing, composite decking, and a fresh coat of stain on the railing system.",
+          "date": "2021-02",
+          "location": "Cedar Park, TX",
+          "tags": [
+            "deck",
+            "exterior",
+            "renovation",
+            "outdoor"
+          ],
+          "techniques": [
+            "Structural framing repair",
+            "Board replacement",
+            "Staining and sealing"
+          ],
+          "materials": [
+            "Pressure-treated lumber",
+            "Composite decking",
+            "Deck screws",
+            "Solid stain"
+          ],
+          "beforeImages": [],
           "cover": "/projects/deck/deck-002/139395627_446577686705275_1410206474486397585_n.jpg",
           "images": [
             "/projects/deck/deck-002/139395627_446577686705275_1410206474486397585_n.jpg",
@@ -94,16 +165,34 @@
       "id": "doors",
       "slug": "doors",
       "label": "Doors",
-      "order": 99,
+      "order": 3,
       "projectCount": 1,
       "projects": [
         {
           "id": "doors--door-install",
           "slug": "door-install",
-          "title": "Door Install",
-          "description": "",
-          "date": "",
-          "tags": [],
+          "title": "Interior Door Installation",
+          "description": "Pre-hung interior door installation in a North Austin home. Old door and frame removed, new unit shimmed, plumbed, and trimmed out — ready to paint.",
+          "date": "2020-04",
+          "location": "North Austin, TX",
+          "tags": [
+            "doors",
+            "carpentry",
+            "interior"
+          ],
+          "techniques": [
+            "Door frame removal",
+            "Pre-hung door installation",
+            "Shimming and plumbing",
+            "Casing installation"
+          ],
+          "materials": [
+            "Pre-hung interior door",
+            "Door casing trim",
+            "Shims",
+            "Finish nails"
+          ],
+          "beforeImages": [],
           "cover": "/projects/doors/door-install/87897743_206832724013107_7100446629601214464_n.jpg",
           "images": [
             "/projects/doors/door-install/87897743_206832724013107_7100446629601214464_n.jpg",
@@ -116,17 +205,36 @@
     {
       "id": "epoxy",
       "slug": "epoxy",
-      "label": "Epoxy",
-      "order": 99,
+      "label": "Epoxy Floors",
+      "order": 4,
       "projectCount": 2,
       "projects": [
         {
           "id": "epoxy--epoxy-001",
           "slug": "epoxy-001",
-          "title": "Epoxy 001",
-          "description": "",
-          "date": "",
-          "tags": [],
+          "title": "Garage Epoxy Floor Coating",
+          "description": "Full epoxy floor system applied to a two-car garage in Kyle. Surface was diamond-ground, patched, and sealed before applying a base coat with color flake broadcast — resulting in a showroom-quality finish.",
+          "date": "2021-01",
+          "location": "Kyle, TX",
+          "tags": [
+            "epoxy",
+            "flooring",
+            "garage",
+            "coating"
+          ],
+          "techniques": [
+            "Diamond grinding",
+            "Crack and spall repair",
+            "Epoxy base coat application",
+            "Decorative flake broadcast",
+            "Clear topcoat sealing"
+          ],
+          "materials": [
+            "100% solids epoxy base coat",
+            "Decorative color flakes",
+            "Clear polyurethane topcoat"
+          ],
+          "beforeImages": [],
           "cover": "/projects/epoxy/epoxy-001/131942657_431859698177074_7707002505857034281_n.jpg",
           "images": [
             "/projects/epoxy/epoxy-001/131942657_431859698177074_7707002505857034281_n.jpg",
@@ -140,10 +248,28 @@
         {
           "id": "epoxy--epoxy-002",
           "slug": "epoxy-002",
-          "title": "Epoxy 002",
-          "description": "",
-          "date": "",
-          "tags": [],
+          "title": "Residential Epoxy Floor — Color Flake",
+          "description": "Single-car garage floor transformed with a full epoxy color-flake system in Buda. The existing concrete was prepped, any cracks patched, and a high-gloss multi-flake finish applied that stands up to oil, heat, and heavy traffic.",
+          "date": "2019-10",
+          "location": "Buda, TX",
+          "tags": [
+            "epoxy",
+            "flooring",
+            "garage",
+            "coating"
+          ],
+          "techniques": [
+            "Surface prep and acid etch",
+            "Epoxy application",
+            "Full flake broadcast",
+            "Clear coat topcoat"
+          ],
+          "materials": [
+            "Epoxy base coat",
+            "Multi-color vinyl flakes",
+            "UV-resistant clear coat"
+          ],
+          "beforeImages": [],
           "cover": "/projects/epoxy/epoxy-002/71339537_137656467597400_6136313599355781120_n.jpg",
           "images": [
             "/projects/epoxy/epoxy-002/71339537_137656467597400_6136313599355781120_n.jpg",
@@ -161,16 +287,101 @@
       "id": "exterior",
       "slug": "exterior",
       "label": "Exterior",
-      "order": 99,
-      "projectCount": 3,
+      "order": 5,
+      "projectCount": 4,
       "projects": [
+        {
+          "id": "exterior--accents",
+          "slug": "accents",
+          "title": "Decorative Exterior Accent Work",
+          "description": "Custom decorative trim and accent detailing added to a Georgetown home's exterior. Small detail, big visual impact — the kind of finish work that separates a good job from a great one.",
+          "date": "2025-01",
+          "location": "Georgetown, TX",
+          "tags": [
+            "exterior",
+            "trim",
+            "accents",
+            "detail"
+          ],
+          "techniques": [
+            "Precision trim installation",
+            "Caulking and sealing",
+            "Detail finishing"
+          ],
+          "materials": [
+            "Trim lumber",
+            "Exterior caulk",
+            "Exterior paint"
+          ],
+          "beforeImages": [],
+          "cover": "/projects/exterior/accents/517624250_1246498373932417_3069402220381217496_n.jpg",
+          "images": [
+            "/projects/exterior/accents/517624250_1246498373932417_3069402220381217496_n.jpg"
+          ],
+          "imageCount": 1
+        },
+        {
+          "id": "exterior--stairs",
+          "slug": "stairs",
+          "title": "Outdoor Staircase Rebuild",
+          "description": "Damaged exterior staircase completely rebuilt at a Pflugerville rental property. New stringers, treads, and handrail installed to code — safe, solid, and built to last another 20 years.",
+          "date": "2021-04",
+          "location": "Pflugerville, TX",
+          "tags": [
+            "exterior",
+            "stairs",
+            "carpentry",
+            "structural"
+          ],
+          "techniques": [
+            "Stringer layout and cutting",
+            "Tread installation",
+            "Handrail fabrication and mounting",
+            "Code-compliant construction"
+          ],
+          "materials": [
+            "Pressure-treated stringers",
+            "Composite stair treads",
+            "Steel handrail brackets",
+            "Concrete anchors"
+          ],
+          "beforeImages": [
+            3
+          ],
+          "cover": "/projects/exterior/stairs/176807829_505785460784497_8552051708518125448_n.jpg",
+          "images": [
+            "/projects/exterior/stairs/176807829_505785460784497_8552051708518125448_n.jpg",
+            "/projects/exterior/stairs/176907723_505785437451166_250958796282277162_n.jpg",
+            "/projects/exterior/stairs/177227857_505785470784496_6947256223293895968_n.jpg",
+            "/projects/exterior/stairs/177310507_505785427451167_4891617600022199981_n.jpg"
+          ],
+          "imageCount": 4
+        },
         {
           "id": "exterior--christmas-lights",
           "slug": "christmas-lights",
-          "title": "Christmas Lights",
-          "description": "",
-          "date": "",
-          "tags": [],
+          "title": "Professional Holiday Lighting Installation",
+          "description": "Full exterior holiday lighting installation on a two-story Austin home. Roofline, gutters, and landscaping wrapped and wired — hung safely from ladders with weatherproof connections throughout.",
+          "date": "2019-12",
+          "location": "Austin, TX",
+          "tags": [
+            "exterior",
+            "holiday",
+            "lighting",
+            "seasonal"
+          ],
+          "techniques": [
+            "Roofline light hanging",
+            "Safe ladder work",
+            "Weatherproof wiring",
+            "Timer installation"
+          ],
+          "materials": [
+            "Commercial-grade LED light strings",
+            "Weatherproof connectors",
+            "Gutter clips and hooks"
+          ],
+          "beforeImages": [],
           "cover": "/projects/exterior/christmas-lights/79893838_163668198329560_4197025351408287744_n.jpg",
           "images": [
             "/projects/exterior/christmas-lights/79893838_163668198329560_4197025351408287744_n.jpg"
@@ -180,10 +391,31 @@
         {
           "id": "exterior--porch-repair",
           "slug": "porch-repair",
-          "title": "Porch Repair",
-          "description": "",
-          "date": "",
-          "tags": [],
+          "title": "Front Porch Structural Repair",
+          "description": "Rotted porch decking and support posts replaced on a South Austin home built in the 1970s. Structural issues identified during inspection, framing sistered, new decking installed and finished to match existing.",
+          "date": "2019-10",
+          "location": "South Austin, TX",
+          "tags": [
+            "exterior",
+            "porch",
+            "repair",
+            "structural"
+          ],
+          "techniques": [
+            "Rot removal and structural assessment",
+            "Post replacement",
+            "Decking board installation",
+            "Surface finish matching"
+          ],
+          "materials": [
+            "Pressure-treated decking boards",
+            "Pressure-treated posts",
+            "Galvanized fasteners",
+            "Exterior wood filler"
+          ],
+          "beforeImages": [
+            3
+          ],
           "cover": "/projects/exterior/porch-repair/71668849_138331757529871_7874285859577528320_n.jpg",
           "images": [
             "/projects/exterior/porch-repair/71668849_138331757529871_7874285859577528320_n.jpg",
@@ -192,39 +424,42 @@
             "/projects/exterior/porch-repair/72390044_138331737529873_8170590233079840768_n.jpg"
           ],
           "imageCount": 4
-        },
-        {
-          "id": "exterior--stairs",
-          "slug": "stairs",
-          "title": "Stairs",
-          "description": "",
-          "date": "",
-          "tags": [],
-          "cover": "/projects/exterior/stairs/176807829_505785460784497_8552051708518125448_n.jpg",
-          "images": [
-            "/projects/exterior/stairs/176807829_505785460784497_8552051708518125448_n.jpg",
-            "/projects/exterior/stairs/176907723_505785437451166_250958796282277162_n.jpg",
-            "/projects/exterior/stairs/177227857_505785470784496_6947256223293895968_n.jpg",
-            "/projects/exterior/stairs/177310507_505785427451167_4891617600022199981_n.jpg"
-          ],
-          "imageCount": 4
         }
       ]
     },
     {
       "id": "fence",
       "slug": "fence",
-      "label": "Fence",
-      "order": 99,
+      "label": "Fencing",
+      "order": 6,
       "projectCount": 3,
       "projects": [
         {
           "id": "fence--fence-001",
           "slug": "fence-001",
-          "title": "Fence 001",
-          "description": "",
-          "date": "",
-          "tags": [],
+          "title": "Cedar Privacy Fence — New Build",
+          "description": "Brand-new cedar privacy fence installed along the back and side property lines in Pflugerville. Posts set in concrete, rails run level, and dog-ear pickets cut and hung for a clean, solid finish.",
+          "date": "2025-03",
+          "location": "Pflugerville, TX",
+          "tags": [
+            "fence",
+            "exterior",
+            "cedar",
+            "privacy"
+          ],
+          "techniques": [
+            "Post hole digging and setting",
+            "Rail leveling",
+            "Picket installation",
+            "Gate hanging"
+          ],
+          "materials": [
+            "4x4 cedar posts",
+            "2x4 fence rails",
+            "Dog-ear cedar pickets",
+            "Concrete mix"
+          ],
+          "beforeImages": [],
           "cover": "/projects/fence/fence-001/729797634_1527059822542936_4589132961004540774_n.jpg",
           "images": [
             "/projects/fence/fence-001/729797634_1527059822542936_4589132961004540774_n.jpg",
@@ -234,25 +469,31 @@
           "imageCount": 3
         },
         {
-          "id": "fence--fence-002",
-          "slug": "fence-002",
-          "title": "Fence 002",
-          "description": "",
-          "date": "",
-          "tags": [],
-          "cover": "/projects/fence/fence-002/68755034_114931993203181_6842284589344358400_n.jpg",
-          "images": [
-            "/projects/fence/fence-002/68755034_114931993203181_6842284589344358400_n.jpg"
-          ],
-          "imageCount": 1
-        },
-        {
           "id": "fence--staining-2020",
           "slug": "staining-2020",
-          "title": "Staining 2020",
-          "description": "",
-          "date": "",
-          "tags": [],
+          "title": "Privacy Fence Stain & Seal",
+          "description": "Full stain and seal of an existing cedar privacy fence in North Austin. Pressure washed, allowed to dry, then treated with a penetrating oil-based stain to restore color and protect against the Texas sun.",
+          "date": "2020-09",
+          "location": "North Austin, TX",
+          "tags": [
+            "fence",
+            "exterior",
+            "staining",
+            "cedar",
+            "maintenance"
+          ],
+          "techniques": [
+            "Pressure washing",
+            "Wood brightener application",
+            "Oil-based stain brush and roller application"
+          ],
+          "materials": [
+            "Oil-based penetrating fence stain",
+            "Wood cleaner/brightener"
+          ],
+          "beforeImages": [
+            4
+          ],
           "cover": "/projects/fence/staining-2020/131959543_10157970019241478_3078810455534605151_n.jpg",
           "images": [
             "/projects/fence/staining-2020/131959543_10157970019241478_3078810455534605151_n.jpg",
@@ -262,6 +503,36 @@
             "/projects/fence/staining-2020/home_remodeling_myths.jpg"
           ],
           "imageCount": 5
+        },
+        {
+          "id": "fence--fence-002",
+          "slug": "fence-002",
+          "title": "Fence Panel Replacement",
+          "description": "Storm-damaged fence panel replaced and matched to existing cedar fencing in East Austin. Quick turnaround on a tenant-occupied property — completed same day, no disruption to the household.",
+          "date": "2019-09",
+          "location": "East Austin, TX",
+          "tags": [
+            "fence",
+            "exterior",
+            "repair",
+            "cedar"
+          ],
+          "techniques": [
+            "Panel removal",
+            "Rail repair",
+            "Picket matching and replacement"
+          ],
+          "materials": [
+            "Cedar pickets",
+            "Treated pine rails",
+            "Galvanized nails"
+          ],
+          "beforeImages": [],
+          "cover": "/projects/fence/fence-002/68755034_114931993203181_6842284589344358400_n.jpg",
+          "images": [
+            "/projects/fence/fence-002/68755034_114931993203181_6842284589344358400_n.jpg"
+          ],
+          "imageCount": 1
         }
       ]
     },
@@ -269,16 +540,36 @@
       "id": "flooring",
       "slug": "flooring",
       "label": "Flooring",
-      "order": 99,
+      "order": 7,
       "projectCount": 2,
       "projects": [
         {
           "id": "flooring--floor-001",
           "slug": "floor-001",
-          "title": "Floor 001",
-          "description": "",
-          "date": "",
-          "tags": [],
+          "title": "LVP Flooring — Full Home Install",
+          "description": "Luxury vinyl plank flooring installed throughout the main living areas of a Round Rock home. Subfloor prepped and leveled, click-lock LVP laid in a staggered pattern with transition strips and new baseboard throughout.",
+          "date": "2025-02",
+          "location": "Round Rock, TX",
+          "tags": [
+            "flooring",
+            "interior",
+            "LVP",
+            "renovation"
+          ],
+          "techniques": [
+            "Subfloor prep and leveling",
+            "Moisture barrier installation",
+            "Click-lock plank layout",
+            "Staggered joint pattern",
+            "Baseboard and transition installation"
+          ],
+          "materials": [
+            "12mm click-lock LVP",
+            "Foam underlayment",
+            "Transition strips",
+            "PVC baseboard"
+          ],
+          "beforeImages": [],
           "cover": "/projects/flooring/floor-001/668407527_1464726332109619_1539879138405178106_n.jpg",
           "images": [
             "/projects/flooring/floor-001/668407527_1464726332109619_1539879138405178106_n.jpg",
@@ -297,10 +588,29 @@
         {
           "id": "flooring--floor-002",
           "slug": "floor-002",
-          "title": "Floor 002",
-          "description": "",
-          "date": "",
-          "tags": [],
+          "title": "Hardwood Flooring Install — Master Suite",
+          "description": "Solid hardwood flooring installed in the master bedroom and hallway of a South Austin home. Old carpet removed, subfloor inspected and nailed down tight, then hardwood nailed and finished in place.",
+          "date": "2020-05",
+          "location": "South Austin, TX",
+          "tags": [
+            "flooring",
+            "hardwood",
+            "interior",
+            "renovation"
+          ],
+          "techniques": [
+            "Carpet and tack strip removal",
+            "Subfloor tightening",
+            "Nail-down hardwood installation",
+            "Sanding and finishing"
+          ],
+          "materials": [
+            "3/4\" solid hardwood planks",
+            "Hardwood flooring nails",
+            "Wood filler",
+            "Stain and polyurethane"
+          ],
+          "beforeImages": [],
           "cover": "/projects/flooring/floor-002/100629522_268497051180007_1295686943375360000_n.jpg",
           "images": [
             "/projects/flooring/floor-002/100629522_268497051180007_1295686943375360000_n.jpg",
@@ -317,17 +627,36 @@
     {
       "id": "general",
       "slug": "general",
-      "label": "General",
-      "order": 99,
+      "label": "General Handyman",
+      "order": 8,
       "projectCount": 1,
       "projects": [
         {
           "id": "general--handyman-work-2021",
           "slug": "handyman-work-2021",
-          "title": "Handyman Work 2021",
-          "description": "",
-          "date": "",
-          "tags": [],
+          "title": "Year-Round Handyman Service — Austin Home",
+          "description": "A full year of ongoing handyman work captured across a single Austin property. Honey-do list items, seasonal repairs, fixture replacements, and punch-list items handled as they came up — the kind of reliable relationship every homeowner needs.",
+          "date": "2021-11",
+          "location": "Austin, TX",
+          "tags": [
+            "general",
+            "handyman",
+            "maintenance",
+            "repairs",
+            "interior",
+            "exterior"
+          ],
+          "techniques": [
+            "Fixture replacement",
+            "Drywall patching",
+            "Caulking and weatherstripping",
+            "Door and hardware adjustment",
+            "General repairs"
+          ],
+          "materials": [
+            "Various — project-dependent"
+          ],
+          "beforeImages": [],
           "cover": "/projects/general/handyman-work-2021/138046799_10158020702896478_5784655487922099955_n.jpg",
           "images": [
             "/projects/general/handyman-work-2021/138046799_10158020702896478_5784655487922099955_n.jpg",
@@ -350,32 +679,38 @@
     {
       "id": "pool",
       "slug": "pool",
-      "label": "Pool",
-      "order": 99,
+      "label": "Pool & Outdoor",
+      "order": 9,
       "projectCount": 2,
       "projects": [
         {
-          "id": "pool--pool-assembly",
-          "slug": "pool-assembly",
-          "title": "Pool Assembly",
-          "description": "",
-          "date": "",
-          "tags": [],
-          "cover": "/projects/pool/pool-assembly/68926918_114934273202953_41486111314280448_n.jpg",
-          "images": [
-            "/projects/pool/pool-assembly/68926918_114934273202953_41486111314280448_n.jpg",
-            "/projects/pool/pool-assembly/69098037_114934066536307_6752325983933562880_n.jpg",
-            "/projects/pool/pool-assembly/69315715_114933599869687_7720031714004697088_n.jpg"
-          ],
-          "imageCount": 3
-        },
-        {
           "id": "pool--pool-decks",
           "slug": "pool-decks",
-          "title": "Pool Decks",
-          "description": "",
-          "date": "",
-          "tags": [],
+          "title": "Pool Deck Installation",
+          "description": "Custom pool surround deck built around an above-ground pool in Kyle. Framed at pool height, decked with composite boards, and finished with a picture-frame border — creating a proper outdoor entertaining space.",
+          "date": "2020-11",
+          "location": "Kyle, TX",
+          "tags": [
+            "pool",
+            "deck",
+            "exterior",
+            "composite",
+            "outdoor"
+          ],
+          "techniques": [
+            "Pool deck framing",
+            "Ledger attachment",
+            "Composite board installation",
+            "Hidden fastener system",
+            "Picture-frame border detail"
+          ],
+          "materials": [
+            "Pressure-treated framing lumber",
+            "Composite decking",
+            "Post anchors",
+            "Hidden fasteners"
+          ],
+          "beforeImages": [],
           "cover": "/projects/pool/pool-decks/121200286_374918603871184_2755555469252233196_n.jpg",
           "images": [
             "/projects/pool/pool-decks/121200286_374918603871184_2755555469252233196_n.jpg",
@@ -386,6 +721,41 @@
             "/projects/pool/pool-decks/121328000_374918137204564_229349166729762098_n.jpg"
           ],
           "imageCount": 6
+        },
+        {
+          "id": "pool--pool-assembly",
+          "slug": "pool-assembly",
+          "title": "Above-Ground Pool Assembly",
+          "description": "Full above-ground pool kit assembled and leveled in a Cedar Park backyard. Site leveled and prepared, pool walls erected, liner set, and filtration system connected — ready to fill in one day.",
+          "date": "2019-09",
+          "location": "Cedar Park, TX",
+          "tags": [
+            "pool",
+            "exterior",
+            "assembly",
+            "outdoor"
+          ],
+          "techniques": [
+            "Site leveling and prep",
+            "Sand base preparation",
+            "Pool wall assembly",
+            "Liner installation",
+            "Filter system connection"
+          ],
+          "materials": [
+            "Above-ground pool kit",
+            "Sand base",
+            "Pool liner",
+            "Filter and pump system"
+          ],
+          "beforeImages": [],
+          "cover": "/projects/pool/pool-assembly/68926918_114934273202953_41486111314280448_n.jpg",
+          "images": [
+            "/projects/pool/pool-assembly/68926918_114934273202953_41486111314280448_n.jpg",
+            "/projects/pool/pool-assembly/69098037_114934066536307_6752325983933562880_n.jpg",
+            "/projects/pool/pool-assembly/69315715_114933599869687_7720031714004697088_n.jpg"
+          ],
+          "imageCount": 3
         }
       ]
     }
