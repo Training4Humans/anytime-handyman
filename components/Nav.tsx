@@ -111,6 +111,7 @@ export default function Nav() {
           <span />
           <span />
           <span />
+          <span className={styles.menuLabel}>MENU</span>
         </button>
       )}
 
