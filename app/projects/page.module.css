@@ -402,6 +402,135 @@
 }
 
 /* ── Project Modal ────────────────────────────────────────── */
+
+/* ── Carousel (inside modal) ──────────────────────────────── */
+.modalCarousel {
+  position: relative;
+}
+
+.carouselSlide {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  cursor: zoom-in;
+  background: #111;
+}
+
+.carouselPhoto {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.carouselSlide:hover .carouselPhoto {
+  transform: scale(1.03);
+}
+
+.carouselExpand {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(0,0,0,0.55);
+  color: var(--white);
+  font-size: 1.1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: 2;
+}
+.carouselSlide:hover .carouselExpand { opacity: 1; }
+
+/* Arrows */
+.carouselNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--white);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-base), border-color var(--transition-base);
+  /* keep arrows inside the slide vertically */
+  top: calc(50% - 60px); /* offset so they sit on the slide, not the thumbs */
+}
+.carouselNav:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+.carouselPrev { left: 0.75rem; }
+.carouselNext { right: 0.75rem; }
+
+/* Thumbnail strip */
+.carouselThumbs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+
+.carouselThumb {
+  position: relative;
+  flex: 0 0 80px;
+  height: 60px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background: #111;
+  transition: border-color var(--transition-base);
+  padding: 0;
+}
+
+.carouselThumb:hover { border-color: rgba(255,255,255,0.35); }
+.carouselThumbActive { border-color: var(--gold) !important; }
+
+.carouselThumbImg {
+  object-fit: cover;
+  transition: opacity var(--transition-base);
+}
+.carouselThumb:not(.carouselThumbActive) .carouselThumbImg { opacity: 0.65; }
+.carouselThumb:hover .carouselThumbImg { opacity: 1; }
+
+/* Small dot on before-shot thumbnails */
+.thumbBeforeDot {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.8);
+  z-index: 2;
+}
+
+.carouselCounter {
+  margin-top: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  color: var(--gray-800);
+  letter-spacing: 0.06em;
+  text-align: right;
+}
+
 .modal {
   position: fixed;
   inset: 0;

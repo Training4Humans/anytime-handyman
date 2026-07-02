@@ -52,6 +52,7 @@ export default function ProjectsPage() {
   const [portfolio, setPortfolio]           = useState<Portfolio | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [activeProject, setActiveProject]   = useState<Project | null>(null);
+  const [modalSlide, setModalSlide]         = useState<number>(0);
   const [lightbox, setLightbox]             = useState<{ project: Project; imgIndex: number } | null>(null);
 
   useEffect(() => {
@@ -73,6 +74,14 @@ export default function ProjectsPage() {
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, [handleKey]);
+
+  // Reset carousel and auto-advance when a project opens
+  useEffect(() => { setModalSlide(0); }, [activeProject]);
+  useEffect(() => {
+    if (!activeProject || activeProject.images.length <= 1) return;
+    const t = setInterval(() => setModalSlide((i) => (i + 1) % activeProject.images.length), 4000);
+    return () => clearInterval(t);
+  }, [activeProject]);
 
   // All projects flattened for "all" view
   const allProjects = portfolio?.categories.flatMap((c) => c.projects) ?? [];
@@ -234,25 +243,69 @@ export default function ProjectsPage() {
               {activeProject.date && <p className={styles.modalDate}>{formatDate(activeProject.date)}</p>}
             </div>
 
-            <div className={styles.modalGrid}>
-              {activeProject.images.map((img, i) => (
-                <div
-                  key={img.src}
-                  className={`${styles.modalThumb} ${img.isBefore ? styles.modalThumbBefore : ""}`}
-                  onClick={() => setLightbox({ project: activeProject, imgIndex: i })}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && setLightbox({ project: activeProject, imgIndex: i })}
-                  id={`thumb-${activeProject.id}-${i}`}
-                >
-                  <Image src={img.src} alt={`${activeProject.title} photo ${i + 1}`} fill className={styles.modalThumbPhoto} sizes="25vw" />
-                  {img.isBefore
-                    ? <span className={styles.beforeBadge}>Before</span>
-                    : <span className={styles.afterBadge}>After</span>
-                  }
-                  <div className={styles.modalThumbOverlay}><span className={styles.modalThumbIcon}>⊕</span></div>
-                </div>
-              ))}
+            {/* ── Carousel ── */}
+            <div className={styles.modalCarousel}>
+              {/* Main slide */}
+              <div
+                className={styles.carouselSlide}
+                onClick={() => setLightbox({ project: activeProject, imgIndex: modalSlide })}
+                role="button"
+                tabIndex={0}
+                aria-label="Expand photo"
+              >
+                <Image
+                  src={activeProject.images[modalSlide].src}
+                  alt={`${activeProject.title} photo ${modalSlide + 1}`}
+                  fill
+                  className={styles.carouselPhoto}
+                  sizes="(max-width: 768px) 100vw, 900px"
+                  priority
+                />
+                {activeProject.images[modalSlide].isBefore
+                  ? <span className={styles.beforeBadge}>Before</span>
+                  : <span className={styles.afterBadge}>After</span>
+                }
+                <div className={styles.carouselExpand}>⊕</div>
+              </div>
+
+              {/* Prev arrow */}
+              {modalSlide > 0 && (
+                <button
+                  className={`${styles.carouselNav} ${styles.carouselPrev}`}
+                  onClick={() => setModalSlide((i) => Math.max(i - 1, 0))}
+                  aria-label="Previous photo"
+                >‹</button>
+              )}
+              {/* Next arrow */}
+              {modalSlide < activeProject.images.length - 1 && (
+                <button
+                  className={`${styles.carouselNav} ${styles.carouselNext}`}
+                  onClick={() => setModalSlide((i) => Math.min(i + 1, activeProject.images.length - 1))}
+                  aria-label="Next photo"
+                >›</button>
+              )}
+
+              {/* Thumbnail strip */}
+              <div className={styles.carouselThumbs}>
+                {activeProject.images.map((img, i) => (
+                  <button
+                    key={i}
+                    className={`${styles.carouselThumb} ${i === modalSlide ? styles.carouselThumbActive : ""}`}
+                    onClick={() => setModalSlide(i)}
+                    aria-label={`Go to photo ${i + 1}`}
+                  >
+                    <Image
+                      src={img.src}
+                      alt={`Thumbnail ${i + 1}`}
+                      fill
+                      className={styles.carouselThumbImg}
+                      sizes="80px"
+                    />
+                    {img.isBefore && <span className={styles.thumbBeforeDot} />}
+                  </button>
+                ))}
+              </div>
+              <div className={styles.carouselCounter}>{modalSlide + 1} / {activeProject.images.length}</div>
             </div>
           </div>
         </div>
