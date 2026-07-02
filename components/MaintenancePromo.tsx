@@ -40,8 +40,8 @@ export default function MaintenancePromo() {
 
             <div className={styles.headlineRow}>
               <h2 className={styles.headline}>
-                Your Home is Your<br />
-                <span>Biggest</span><br />
+                Your Home is<br />
+                Your <span>Biggest</span><br />
                 Investment.
               </h2>
               <div className={styles.contractBadge}>
