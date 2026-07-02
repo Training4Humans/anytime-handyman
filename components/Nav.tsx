@@ -124,6 +124,13 @@ export default function Nav() {
           <Link href="/" onClick={() => setMenuOpen(false)}>
             <Image src="/Logos/AH_LOGO.png" alt="The Anytime Handyman" width={100} height={100} />
           </Link>
+          <button
+            className={styles.menuClose}
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            ✕
+          </button>
         </div>
 
         <ul className={styles.mobileLinks}>

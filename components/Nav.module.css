@@ -121,14 +121,16 @@
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 40px;
-  height: 40px;
-  padding: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
   flex-shrink: 0;
   margin-left: auto;
   background: transparent;
   border: none;
   cursor: pointer;
+  position: relative;
+  z-index: 10;
 }
 
 .hamburger span {
@@ -348,5 +350,12 @@
   }
   .nav:not(.navHome) .logo:hover {
     transform: translateY(0) scale(1.04);
+  }
+
+  /* Make hamburger clearly tappable and visible on mobile */
+  .hamburger {
+    display: flex !important;
+    background: rgba(255,255,255,0.08);
+    border-radius: var(--radius-sm);
   }
 }
