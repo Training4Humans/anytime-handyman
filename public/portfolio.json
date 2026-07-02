@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-02T20:13:58.615Z",
+  "generated": "2026-07-02T20:33:17.817Z",
   "categoryCount": 8,
   "projectCount": 17,
-  "imageCount": 71,
+  "imageCount": 69,
   "categories": [
     {
       "id": "cabinets",
@@ -146,8 +146,8 @@
               "isBefore": true
             },
             {
-              "src": "/projects/deck/deck-001/003_deck_a.jpg",
-              "isBefore": false
+              "src": "/projects/deck/deck-001/003_deck_b.jpg",
+              "isBefore": true
             }
           ],
           "imageCount": 3
@@ -195,16 +195,16 @@
               "isBefore": false
             },
             {
-              "src": "/projects/deck/deck-002/006_deck_a.jpg",
-              "isBefore": false
+              "src": "/projects/deck/deck-002/005_deck_b.jpg",
+              "isBefore": true
             },
             {
-              "src": "/projects/deck/deck-002/007_deck_a.jpg",
-              "isBefore": false
+              "src": "/projects/deck/deck-002/006_deck_b.jpg",
+              "isBefore": true
             },
             {
-              "src": "/projects/deck/deck-002/008_deck_a.jpg",
-              "isBefore": false
+              "src": "/projects/deck/deck-002/008_deck_b.jpg",
+              "isBefore": true
             }
           ],
           "imageCount": 7
@@ -221,8 +221,8 @@
         {
           "id": "doors--door-install",
           "slug": "door-install",
-          "title": "Interior Door Installation",
-          "description": "Pre-hung interior door installation in a North Austin home. Old door and frame removed, new unit shimmed, plumbed, and trimmed out — ready to paint.",
+          "title": "Exterior Door Refinishing and Installation",
+          "description": "Exterior door installation in a North Austin home. Old door and frame removed, new unit shimmed, plumbed, and trimmed out — ready to paint.",
           "date": "2020-04",
           "location": "North Austin, TX",
           "tags": [
@@ -249,8 +249,8 @@
               "isBefore": false
             },
             {
-              "src": "/projects/doors/door-install/002_doors_a.jpg",
-              "isBefore": false
+              "src": "/projects/doors/door-install/002_doors_b.jpg",
+              "isBefore": true
             }
           ],
           "imageCount": 2
@@ -300,19 +300,15 @@
               "isBefore": false
             },
             {
-              "src": "/projects/epoxy/epoxy-001/003_epoxy_a.jpg",
-              "isBefore": false
+              "src": "/projects/epoxy/epoxy-001/003_epoxy_b.jpg",
+              "isBefore": true
             },
             {
-              "src": "/projects/epoxy/epoxy-001/004_epoxy_a.jpg",
-              "isBefore": false
-            },
-            {
-              "src": "/projects/epoxy/epoxy-001/005_epoxy_a.jpg",
-              "isBefore": false
+              "src": "/projects/epoxy/epoxy-001/004_epoxy_b.jpg",
+              "isBefore": true
             }
           ],
-          "imageCount": 5
+          "imageCount": 4
         },
         {
           "id": "epoxy--epoxy-002",
@@ -338,11 +334,11 @@
             "Multi-color vinyl flakes",
             "UV-resistant clear coat"
           ],
-          "cover": "/projects/epoxy/epoxy-002/001_epoxy_a.jpg",
+          "cover": "/projects/epoxy/epoxy-002/002_epoxy_a.jpg",
           "images": [
             {
-              "src": "/projects/epoxy/epoxy-002/001_epoxy_a.jpg",
-              "isBefore": false
+              "src": "/projects/epoxy/epoxy-002/001_epoxy_b.jpg",
+              "isBefore": true
             },
             {
               "src": "/projects/epoxy/epoxy-002/002_epoxy_a.jpg",
@@ -361,8 +357,8 @@
               "isBefore": false
             },
             {
-              "src": "/projects/epoxy/epoxy-002/006_epoxy_a.jpg",
-              "isBefore": false
+              "src": "/projects/epoxy/epoxy-002/006_epoxy_b.jpg",
+              "isBefore": true
             }
           ],
           "imageCount": 6
@@ -444,12 +440,12 @@
               "isBefore": false
             },
             {
-              "src": "/projects/exterior/stairs/003_stairs_a.jpg",
-              "isBefore": false
+              "src": "/projects/exterior/stairs/003_stairs_b.jpg",
+              "isBefore": true
             },
             {
-              "src": "/projects/exterior/stairs/004_stairs_a.jpg",
-              "isBefore": false
+              "src": "/projects/exterior/stairs/004_stairs_b.jpg",
+              "isBefore": true
             }
           ],
           "imageCount": 4
@@ -527,8 +523,8 @@
               "isBefore": false
             },
             {
-              "src": "/projects/exterior/porch-repair/004_porch_a.jpg",
-              "isBefore": false
+              "src": "/projects/exterior/porch-repair/004_porch_b.jpg",
+              "isBefore": true
             }
           ],
           "imageCount": 4
@@ -674,24 +670,24 @@
               "isBefore": false
             },
             {
-              "src": "/projects/flooring/floor-001/006_floor_a.jpg",
-              "isBefore": false
+              "src": "/projects/flooring/floor-001/006_floor_b.jpg",
+              "isBefore": true
             },
             {
-              "src": "/projects/flooring/floor-001/007_floor_a.jpg",
-              "isBefore": false
+              "src": "/projects/flooring/floor-001/007_floor_b.jpg",
+              "isBefore": true
             },
             {
-              "src": "/projects/flooring/floor-001/008_floor_a.jpg",
-              "isBefore": false
+              "src": "/projects/flooring/floor-001/008_floor_b.jpg",
+              "isBefore": true
             },
             {
-              "src": "/projects/flooring/floor-001/009_floor_a.jpg",
-              "isBefore": false
+              "src": "/projects/flooring/floor-001/009_floor_b.jpg",
+              "isBefore": true
             },
             {
-              "src": "/projects/flooring/floor-001/010_floor_a.jpg",
-              "isBefore": false
+              "src": "/projects/flooring/floor-001/010_floor_b.jpg",
+              "isBefore": true
             }
           ],
           "imageCount": 10
@@ -736,16 +732,16 @@
               "isBefore": false
             },
             {
-              "src": "/projects/flooring/floor-002/004_floor_a.jpg",
-              "isBefore": false
+              "src": "/projects/flooring/floor-002/003_floor_b.jpg",
+              "isBefore": true
             },
             {
-              "src": "/projects/flooring/floor-002/005_floor_a.jpg",
-              "isBefore": false
+              "src": "/projects/flooring/floor-002/004_floor_b.jpg",
+              "isBefore": true
             },
             {
-              "src": "/projects/flooring/floor-002/006_floor_a.jpg",
-              "isBefore": false
+              "src": "/projects/flooring/floor-002/005_floor_b.jpg",
+              "isBefore": true
             }
           ],
           "imageCount": 6
@@ -805,15 +801,11 @@
               "isBefore": false
             },
             {
-              "src": "/projects/pool/pool-decks/005_pooldecks_a.jpg",
-              "isBefore": false
-            },
-            {
-              "src": "/projects/pool/pool-decks/006_pooldecks_a.jpg",
-              "isBefore": false
+              "src": "/projects/pool/pool-decks/005_pooldecks_b.jpg",
+              "isBefore": true
             }
           ],
-          "imageCount": 6
+          "imageCount": 5
         },
         {
           "id": "pool--pool-assembly",
@@ -848,12 +840,12 @@
               "isBefore": false
             },
             {
-              "src": "/projects/pool/pool-assembly/002_pool_a.jpg",
-              "isBefore": false
+              "src": "/projects/pool/pool-assembly/002_pool_b.jpg",
+              "isBefore": true
             },
             {
-              "src": "/projects/pool/pool-assembly/003_pool_a.jpg",
-              "isBefore": false
+              "src": "/projects/pool/pool-assembly/003_pool_b.jpg",
+              "isBefore": true
             }
           ],
           "imageCount": 3
