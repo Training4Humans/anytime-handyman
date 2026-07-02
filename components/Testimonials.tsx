@@ -1,45 +1,72 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import AnimatedSection from "./AnimatedSection";
 import { testimonials } from "@/config/testimonials";
 import styles from "./Testimonials.module.css";
 
-const INTERVAL = 5000; // ms between auto-advances
+const INTERVAL = 5000;
+
+type AnimState = "idle" | "out-left" | "out-right" | "in-right" | "in-left";
 
 export default function Testimonials() {
-  const [active, setActive] = useState(0);
-  const [fading, setFading] = useState(false);
-  const total = testimonials.length;
+  const [active, setActive]       = useState(0);
+  const [anim, setAnim]           = useState<AnimState>("idle");
+  const total                     = testimonials.length;
+  const timerRef                  = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const goTo = useCallback((index: number) => {
-    setFading(true);
-    setTimeout(() => {
-      setActive(index);
-      setFading(false);
-    }, 300);
+  const transition = useCallback((nextIndex: number, dir: "left" | "right") => {
+    // Step 1: slide current content out (400ms)
+    setAnim(dir === "left" ? "out-left" : "out-right");
+
+    timerRef.current = setTimeout(() => {
+      // Step 2: swap content, slide new content in (550ms)
+      setActive(nextIndex);
+      setAnim(dir === "left" ? "in-right" : "in-left");
+
+      timerRef.current = setTimeout(() => {
+        setAnim("idle");
+      }, 550);
+    }, 400);
   }, []);
 
-  const prev = useCallback(() => {
-    goTo((active - 1 + total) % total);
-  }, [active, total, goTo]);
-
   const next = useCallback(() => {
-    goTo((active + 1) % total);
-  }, [active, total, goTo]);
+    transition((active + 1) % total, "left");
+  }, [active, total, transition]);
 
-  // Auto-advance
+  const prev = useCallback(() => {
+    transition((active - 1 + total) % total, "right");
+  }, [active, total, transition]);
+
+  const goTo = useCallback((index: number) => {
+    const dir = index > active ? "left" : "right";
+    transition(index, dir);
+  }, [active, transition]);
+
+  // Auto-advance — restart timer whenever `next` changes
   useEffect(() => {
     const timer = setInterval(next, INTERVAL);
     return () => clearInterval(timer);
   }, [next]);
 
+  // Cleanup on unmount
+  useEffect(() => () => { if (timerRef.current) clearTimeout(timerRef.current); }, []);
+
   const t = testimonials[active];
+
+  // Map anim state → CSS class
+  const animClass = {
+    "idle":      "",
+    "out-left":  styles.slideOutLeft,
+    "out-right": styles.slideOutRight,
+    "in-right":  styles.slideInRight,
+    "in-left":   styles.slideInLeft,
+  }[anim];
 
   return (
     <section className={styles.section} id="reviews">
       <div className="container">
 
-        {/* Header row */}
+        {/* Header */}
         <AnimatedSection animation="fade-up" className={styles.header}>
           <div>
             <p className="section-eyebrow">Client Reviews</p>
@@ -61,40 +88,26 @@ export default function Testimonials() {
           </div>
         </AnimatedSection>
 
-        {/* Slideshow quote */}
+        {/* Slideshow */}
         <div className={styles.slideshowWrap}>
-          <button
-            className={styles.arrow}
-            onClick={prev}
-            aria-label="Previous review"
-            id="testimonial-prev"
-          >
-            ←
-          </button>
+          <button className={styles.arrow} onClick={prev} aria-label="Previous review" id="testimonial-prev">←</button>
 
-          <div className={`${styles.quoteBlock} ${fading ? styles.fading : ""}`}>
-            <div className={styles.openQuote}>&ldquo;</div>
-            <p className={styles.quoteText}>{t.text}</p>
-            <div className={styles.quoteFooter}>
-              <div className={styles.avatar}>{t.avatar}</div>
-              <div>
-                <p className={styles.name}>{t.name}</p>
-                <p className={styles.meta}>{t.location} · {t.service} · {t.date}</p>
-              </div>
-              <div className={styles.stars}>
-                {"★".repeat(t.rating)}
+          <div className={styles.slideClip}>
+            <div className={`${styles.quoteBlock} ${animClass}`}>
+              <div className={styles.openQuote}>&ldquo;</div>
+              <p className={styles.quoteText}>{t.text}</p>
+              <div className={styles.quoteFooter}>
+                <div className={styles.avatar}>{t.avatar}</div>
+                <div>
+                  <p className={styles.name}>{t.name}</p>
+                  <p className={styles.meta}>{t.location} · {t.service} · {t.date}</p>
+                </div>
+                <div className={styles.stars}>{"★".repeat(t.rating)}</div>
               </div>
             </div>
           </div>
 
-          <button
-            className={styles.arrow}
-            onClick={next}
-            aria-label="Next review"
-            id="testimonial-next"
-          >
-            →
-          </button>
+          <button className={styles.arrow} onClick={next} aria-label="Next review" id="testimonial-next">→</button>
         </div>
 
         {/* Dot indicators */}

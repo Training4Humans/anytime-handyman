@@ -41,10 +41,15 @@
   color: var(--gray-400);
 }
 
-/* Big editorial quote */
+/* Slide clip — hides overflowing content during transition */
+.slideClip {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Quote block */
 .quoteBlock {
   max-width: 900px;
-  margin: 0 auto 3rem;
   position: relative;
   padding-top: 2rem;
 }
@@ -54,23 +59,36 @@
   font-size: 8rem;
   line-height: 0.6;
   color: var(--gold);
-  opacity: 0.25;
+  opacity: 1;
   position: absolute;
   top: 0;
   left: -1rem;
   user-select: none;
 }
 
-.quoteText {
-  font-family: var(--font-body);
-  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
-  line-height: 1.75;
-  color: var(--white);
-  font-style: italic;
-  font-weight: 300;
-  margin-bottom: 2.5rem;
-  padding-top: 1rem;
+/* Slide keyframes */
+@keyframes slideOutLeft {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(-80px); opacity: 0; }
 }
+@keyframes slideOutRight {
+  from { transform: translateX(0);   opacity: 1; }
+  to   { transform: translateX(80px); opacity: 0; }
+}
+@keyframes slideInRight {
+  from { transform: translateX(80px); opacity: 0; }
+  to   { transform: translateX(0);   opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { transform: translateX(-80px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+.slideOutLeft  { animation: slideOutLeft  0.4s ease-in-out forwards; }
+.slideOutRight { animation: slideOutRight 0.4s ease-in-out forwards; }
+.slideInRight  { animation: slideInRight  0.55s ease-in-out forwards; }
+.slideInLeft   { animation: slideInLeft   0.55s ease-in-out forwards; }
+
 
 .quoteFooter {
   display: flex;
