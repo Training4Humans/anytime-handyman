@@ -191,18 +191,18 @@ function PencilCircle() {
     >
       <defs>
         <filter id="nav-pencil-rough" x="-18%" y="-35%" width="136%" height="170%">
-          {/* type="turbulence" is jagged/sharp vs fractalNoise which is smooth */}
+          {/* fractalNoise + low freq + 1 octave = smooth confident swoosh, no jitter */}
           <feTurbulence
-            type="turbulence"
-            baseFrequency="0.055 0.085"
-            numOctaves="4"
+            type="fractalNoise"
+            baseFrequency="0.008 0.014"
+            numOctaves="1"
             seed="4"
             result="noise"
           />
           <feDisplacementMap
             in="SourceGraphic"
             in2="noise"
-            scale="5.5"
+            scale="4"
             xChannelSelector="R"
             yChannelSelector="G"
           />
