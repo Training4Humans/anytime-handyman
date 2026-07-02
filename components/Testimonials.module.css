@@ -73,12 +73,11 @@
   color: var(--gold);
 }
 
-/* Clip — overflow hidden ONLY for slide transition */
 .slideClip {
   flex: 1;
   overflow: hidden;
-  /* Fixed height so section never jumps between testimonials */
-  min-height: 320px;
+  /* Fixed height — never grows, never jumps */
+  height: 360px;
   display: flex;
   align-items: flex-start;
 }
@@ -86,7 +85,8 @@
 /* ── Quote block ──────────────────────────────────────────── */
 .quoteBlock {
   width: 100%;
-  min-height: 320px;
+  height: 360px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
@@ -215,6 +215,6 @@
   .quoteFooter { flex-wrap: wrap; }
   .arrow { width: 36px; height: 36px; font-size: 0.9rem; }
   .slideshowWrap { gap: 0.75rem; padding: 0 1rem; }
-  .slideClip { min-height: 380px; }
-  .quoteBlock { min-height: 380px; }
+  .slideClip { height: 460px; }
+  .quoteBlock { height: 460px; }
 }
