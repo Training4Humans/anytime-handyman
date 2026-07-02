@@ -86,10 +86,10 @@ export default function MaintenancePromo() {
 
 
             <div className={styles.ctas}>
-              <Link href="/maintenance" className={styles.ctaPrimary}>
+              <Link href="/maintenance#plans" className={styles.ctaPrimary}>
                 View Plans &amp; Get a Quote
               </Link>
-              <Link href="/contact" className={styles.ctaSecondary}>
+              <Link href="/maintenance" className={styles.ctaSecondary}>
                 Learn More →
               </Link>
             </div>
