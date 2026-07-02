@@ -15,48 +15,33 @@
   align-items: center;
 }
 
-/* 4-panel collage */
-.heroCollage {
+/* Single full-bleed hero photo */
+.heroImgWrap {
   position: absolute;
   inset: 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  z-index: 0;
 }
 
-.heroPanel {
-  position: relative;
-  overflow: hidden;
-}
-
-.heroPanelImg {
+.heroImg {
   object-fit: cover;
-  object-position: center;
+  object-position: center 60%;
   transition: transform 8s ease;
 }
 
-.hero:hover .heroPanelImg {
-  transform: scale(1.04);
+.hero:hover .heroImg {
+  transform: scale(1.03);
 }
 
-.heroPanelOverlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(13,13,13,0.45);
-}
-
-/* thin vertical dividers between panels */
-.heroPanel + .heroPanel {
-  border-left: 1px solid rgba(255,255,255,0.08);
-}
-
-/* Dark gradient over whole collage so text reads clearly */
-.heroGradient {
+/* Top + bottom shadow so text reads cleanly */
+.heroShadow {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(13,13,13,0.2) 0%,
-    rgba(13,13,13,0.65) 100%
+    rgba(0,0,0,0.58) 0%,
+    transparent 32%,
+    transparent 62%,
+    rgba(0,0,0,0.62) 100%
   );
   z-index: 1;
 }
