@@ -108,9 +108,11 @@ export default function Nav() {
           aria-expanded={menuOpen}
           id="floating-hamburger-btn"
         >
-          <span />
-          <span />
-          <span />
+          <div className={styles.hamburgerLines}>
+            <span />
+            <span />
+            <span />
+          </div>
           <span className={styles.menuLabel}>MENU</span>
         </button>
       )}

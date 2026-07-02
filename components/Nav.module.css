@@ -146,66 +146,67 @@
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 @keyframes menuGlow {
-  0%, 100% { filter: drop-shadow(0 0 4px rgba(212,148,10,0.5)); }
-  50%       { filter: drop-shadow(0 0 14px rgba(212,148,10,1)); }
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(212,148,10,0.6)) drop-shadow(0 0 12px rgba(212,148,10,0.3)); }
+  50%       { filter: drop-shadow(0 0 20px rgba(212,148,10,1)) drop-shadow(0 0 40px rgba(212,148,10,0.7)) drop-shadow(0 0 60px rgba(212,148,10,0.4)); }
 }
 
 @keyframes menuWiggle {
   0%, 100% { transform: rotate(0deg); }
-  20%       { transform: rotate(-8deg); }
-  40%       { transform: rotate(8deg); }
-  60%       { transform: rotate(-5deg); }
-  80%       { transform: rotate(5deg); }
+  20%       { transform: rotate(-10deg); }
+  40%       { transform: rotate(10deg); }
+  60%       { transform: rotate(-6deg); }
+  80%       { transform: rotate(6deg); }
 }
 
+/* Outer button — horizontal: lines | MENU */
 .floatingHamburger {
-  display: none; /* shown via media query */
+  display: none;
   position: fixed;
   top: 1.25rem;
   right: 1.25rem;
   z-index: 1200;
-  width: 44px;
-  height: 44px;
-  padding: 10px 8px;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
+  gap: 10px;
+  padding: 8px 4px;
   background: transparent;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
-  /* Glow pulses continuously, wiggle plays twice after 1s */
   animation: menuGlow 1.4s ease-in-out infinite, menuWiggle 0.55s ease-in-out 1s 2;
 }
 
-
-.floatingHamburger span {
-  display: block;
-  height: 2px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: all var(--transition-base);
-  transform-origin: center;
-  width: 22px;
+/* Lines container */
+.hamburgerLines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.menuLabel {
+.hamburgerLines span {
   display: block;
+  height: 3px;
+  width: 28px;
+  background: var(--white);
+  border-radius: 3px;
+  transition: all var(--transition-base);
+  transform-origin: center;
+}
+
+/* MENU label — to the right */
+.menuLabel {
   font-family: var(--font-ui);
-  font-size: 0.5rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
   color: var(--white);
-  text-shadow: 0 0 8px rgba(212,148,10,0.8);
-  margin-top: 1px;
   line-height: 1;
 }
 
+/* Open state — target lines inside wrapper */
+.floatingHamburger.open .hamburgerLines span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.floatingHamburger.open .hamburgerLines span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.floatingHamburger.open .hamburgerLines span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-.floatingHamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.floatingHamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.floatingHamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ── Mobile Slide-out Menu ───────────────────────────────── */
 .mobileMenu {
