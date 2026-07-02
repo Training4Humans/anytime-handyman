@@ -159,31 +159,44 @@ export default function MaintenancePage() {
         />
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroContent}`}>
-          <p className={styles.heroEyebrow}>
-            <span className={styles.eyebrowDot} />
-            Signature Service
-          </p>
-          <h1 className={styles.heroTitle}>
-            Your Home.<br />
-            <span>Protected.</span>
-          </h1>
-          <p className={styles.heroSub}>
-            Proactive maintenance plans that catch small problems before they become expensive disasters. One subscription, total peace of mind.
-          </p>
-          <div className={styles.heroStats}>
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatNum}>$0</span>
-              <span className={styles.heroStatLabel}>Setup fee</span>
+          <div className={styles.heroInner}>
+            <div className={styles.heroLeft}>
+              <p className={styles.heroEyebrow}>
+                <span className={styles.eyebrowDot} />
+                Signature Service
+              </p>
+              <h1 className={styles.heroTitle}>
+                Your Home.<br />
+                <span>Protected.</span>
+              </h1>
+              <p className={styles.heroSub}>
+                Proactive maintenance plans that catch small problems before they become expensive disasters. One subscription, total peace of mind.
+              </p>
+              <div className={styles.heroStats}>
+                <div className={styles.heroStat}>
+                  <span className={styles.heroStatNum}>$0</span>
+                  <span className={styles.heroStatLabel}>Setup fee</span>
+                </div>
+                <div className={styles.heroStatDivider} />
+                <div className={styles.heroStat}>
+                  <span className={styles.heroStatNum}>24hr</span>
+                  <span className={styles.heroStatLabel}>First response</span>
+                </div>
+                <div className={styles.heroStatDivider} />
+                <div className={styles.heroStat}>
+                  <span className={styles.heroStatNum}>100%</span>
+                  <span className={styles.heroStatLabel}>Satisfaction guarantee</span>
+                </div>
+              </div>
             </div>
-            <div className={styles.heroStatDivider} />
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatNum}>24hr</span>
-              <span className={styles.heroStatLabel}>First response</span>
-            </div>
-            <div className={styles.heroStatDivider} />
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatNum}>100%</span>
-              <span className={styles.heroStatLabel}>Satisfaction guarantee</span>
+            <div className={styles.heroRight}>
+              <Image
+                src="/images/service-contracts.png"
+                alt="Anytime Handyman service contract badge"
+                width={320}
+                height={320}
+                className={styles.heroContractBadge}
+              />
             </div>
           </div>
         </div>
@@ -299,14 +312,8 @@ export default function MaintenancePage() {
                       <span className={styles.planPricePer}>/mo</span>
                     </div>
                     {plan.id === "premium" && (
-                      <div className={styles.planContractBadge}>
-                        <Image
-                          src="/images/service-contracts.png"
-                          alt="Service contract badge"
-                          width={100}
-                          height={100}
-                          className={styles.planContractImg}
-                        />
+                      <div className={styles.planBadgeRow}>
+                        <span className={styles.planBadgeText}>Best Value</span>
                       </div>
                     )}
                     {savings > 0 && (

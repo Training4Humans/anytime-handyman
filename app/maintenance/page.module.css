@@ -36,8 +36,52 @@
   position: relative;
   z-index: 2;
   padding-top: 7rem;
-  max-width: 680px;
+  width: 100%;
+  max-width: none;
 }
+
+.heroInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.heroLeft {
+  flex: 1;
+  max-width: 620px;
+}
+
+.heroRight {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes contractGlow {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 30px rgba(212,148,10,0.7))
+      drop-shadow(0 0 70px rgba(212,148,10,0.35))
+      drop-shadow(0 0 120px rgba(212,148,10,0.15));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 50px rgba(212,148,10,1))
+      drop-shadow(0 0 100px rgba(212,148,10,0.55))
+      drop-shadow(0 0 160px rgba(212,148,10,0.25));
+  }
+}
+
+.heroContractBadge {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  transform: rotate(10deg);
+  animation: contractGlow 3s ease-in-out infinite;
+}
+
 
 .heroEyebrow {
   display: inline-flex;
