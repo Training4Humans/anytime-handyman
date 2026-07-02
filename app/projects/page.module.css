@@ -994,43 +994,74 @@
   .projectGrid  { grid-template-columns: 1fr; }
 }
 
-/* ── Magazine: mobile overrides ───────────────────────────── */
+/* ── Magazine: mobile swipe strips ────────────────────────── */
 @media (max-width: 768px) {
-  /* Stack feature + side vertically */
-  .magLayout { grid-template-columns: 1fr; }
+  /* Each category's cards become a single horizontal swipe strip */
+  .magLayout {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 0.85rem;
+    padding: 0.25rem 0.25rem 0.75rem;
+  }
+  .magLayout::-webkit-scrollbar { display: none; }
 
-  /* Shorter feature on mobile so it doesn't eat the whole screen */
-  .magFeature { height: 280px; }
+  /* Collapse side column so its cards flow directly into the strip */
+  .magSideCol { display: contents; }
 
-  /* Side cards tall enough to tap comfortably */
-  .magSideCard { min-height: 180px; }
+  /* All cards become equal-width swipeable tiles */
+  .magFeature,
+  .magSideCard {
+    flex: 0 0 80vw;
+    height: 260px;
+    scroll-snap-align: start;
+    /* reset desktop-only styles */
+    grid-column: unset;
+    grid-row: unset;
+  }
 
-  /* Larger text in cards */
-  .magTitle     { font-size: 1.3rem; }
+  /* Overflow cards join their own strip */
+  .magOverflow {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 0.85rem;
+    padding: 0.25rem 0.25rem 0.75rem;
+    margin-top: 0.85rem;
+  }
+  .magOverflow::-webkit-scrollbar { display: none; }
+  .magOverflowCard {
+    flex: 0 0 80vw;
+    height: 220px;
+    scroll-snap-align: start;
+  }
+
+  /* Slightly bigger card text */
+  .magTitle     { font-size: 1.25rem; }
   .magSideTitle { font-size: 1rem; }
   .magEyebrow   { font-size: 0.72rem; }
   .magMeta      { font-size: 0.72rem; }
-  .magDesc      { font-size: 0.85rem; }
+  .magDesc      { font-size: 0.85rem; -webkit-line-clamp: 2; }
 
-  /* Bigger section headers */
-  .magSectionTitle { font-size: 1.25rem; }
+  /* Section headers */
+  .magSectionTitle { font-size: 1.2rem; }
   .magSectionCount { font-size: 0.75rem; }
+  .magSection      { margin-bottom: 3rem; }
 
-  /* Overflow grid stacks to 2 cols */
-  .magOverflow { grid-template-columns: repeat(2, 1fr); }
-  .magOverflowCard { height: 160px; }
-
-  /* Hero stat line */
+  /* Hero stat */
   .heroCount { font-size: 0.82rem; }
 
-  /* Filter nav wraps more comfortably */
+  /* Filter nav */
   .filterRow { gap: 0.4rem; }
   .filterBtn { font-size: 0.72rem; padding: 0.45rem 0.7rem; }
 }
 
 @media (max-width: 480px) {
-  .magFeature   { height: 240px; }
-  .magSideCard  { min-height: 160px; }
-  .magOverflow  { grid-template-columns: 1fr; }
-  .magOverflowCard { height: 180px; }
+  .magFeature,
+  .magSideCard   { flex: 0 0 88vw; height: 240px; }
+  .magOverflowCard { flex: 0 0 88vw; height: 200px; }
 }
