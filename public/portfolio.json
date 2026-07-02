@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-02T20:56:49.938Z",
-  "categoryCount": 8,
+  "generated": "2026-07-02T20:59:07.509Z",
+  "categoryCount": 7,
   "projectCount": 17,
   "imageCount": 69,
   "categories": [
@@ -645,7 +645,7 @@
       "slug": "exterior",
       "label": "Exterior",
       "order": 7,
-      "projectCount": 4,
+      "projectCount": 5,
       "projects": [
         {
           "id": "exterior--accents",
@@ -726,6 +726,43 @@
           "imageCount": 4
         },
         {
+          "id": "exterior--door-install",
+          "slug": "door-install",
+          "title": "Exterior Door Refinishing and Installation",
+          "description": "Exterior door installation in a North Austin home. Old door and frame removed, new unit shimmed, plumbed, and trimmed out — ready to paint.",
+          "date": "2020-04",
+          "location": "North Austin, TX",
+          "tags": [
+            "doors",
+            "carpentry",
+            "interior"
+          ],
+          "techniques": [
+            "Door frame removal",
+            "Pre-hung door installation",
+            "Shimming and plumbing",
+            "Casing installation"
+          ],
+          "materials": [
+            "Pre-hung interior door",
+            "Door casing trim",
+            "Shims",
+            "Finish nails"
+          ],
+          "cover": "/projects/exterior/door-install/001_doors_a.jpg",
+          "images": [
+            {
+              "src": "/projects/exterior/door-install/001_doors_a.jpg",
+              "isBefore": false
+            },
+            {
+              "src": "/projects/exterior/door-install/002_doors_b.jpg",
+              "isBefore": true
+            }
+          ],
+          "imageCount": 2
+        },
+        {
           "id": "exterior--christmas-lights",
           "slug": "christmas-lights",
           "title": "Professional Holiday Lighting Installation",
@@ -803,52 +840,6 @@
             }
           ],
           "imageCount": 4
-        }
-      ]
-    },
-    {
-      "id": "doors",
-      "slug": "doors",
-      "label": "Doors",
-      "order": 8,
-      "projectCount": 1,
-      "projects": [
-        {
-          "id": "doors--door-install",
-          "slug": "door-install",
-          "title": "Exterior Door Refinishing and Installation",
-          "description": "Exterior door installation in a North Austin home. Old door and frame removed, new unit shimmed, plumbed, and trimmed out — ready to paint.",
-          "date": "2020-04",
-          "location": "North Austin, TX",
-          "tags": [
-            "doors",
-            "carpentry",
-            "interior"
-          ],
-          "techniques": [
-            "Door frame removal",
-            "Pre-hung door installation",
-            "Shimming and plumbing",
-            "Casing installation"
-          ],
-          "materials": [
-            "Pre-hung interior door",
-            "Door casing trim",
-            "Shims",
-            "Finish nails"
-          ],
-          "cover": "/projects/doors/door-install/001_doors_a.jpg",
-          "images": [
-            {
-              "src": "/projects/doors/door-install/001_doors_a.jpg",
-              "isBefore": false
-            },
-            {
-              "src": "/projects/doors/door-install/002_doors_b.jpg",
-              "isBefore": true
-            }
-          ],
-          "imageCount": 2
         }
       ]
     }
