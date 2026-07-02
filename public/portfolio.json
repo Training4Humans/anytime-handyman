@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-02T20:33:17.817Z",
+  "generated": "2026-07-02T20:40:17.141Z",
   "categoryCount": 8,
   "projectCount": 17,
   "imageCount": 69,
@@ -7,8 +7,8 @@
     {
       "id": "cabinets",
       "slug": "cabinets",
-      "label": "Cabinetry",
-      "order": 1,
+      "label": "Cabinets",
+      "order": 99,
       "projectCount": 2,
       "projects": [
         {
@@ -107,8 +107,8 @@
     {
       "id": "deck",
       "slug": "deck",
-      "label": "Decks",
-      "order": 2,
+      "label": "Deck",
+      "order": 99,
       "projectCount": 2,
       "projects": [
         {
@@ -215,7 +215,7 @@
       "id": "doors",
       "slug": "doors",
       "label": "Doors",
-      "order": 3,
+      "order": 99,
       "projectCount": 1,
       "projects": [
         {
@@ -260,8 +260,8 @@
     {
       "id": "epoxy",
       "slug": "epoxy",
-      "label": "Epoxy Floors",
-      "order": 4,
+      "label": "Epoxy",
+      "order": 99,
       "projectCount": 2,
       "projects": [
         {
@@ -369,7 +369,7 @@
       "id": "exterior",
       "slug": "exterior",
       "label": "Exterior",
-      "order": 5,
+      "order": 99,
       "projectCount": 4,
       "projects": [
         {
@@ -534,8 +534,8 @@
     {
       "id": "fence",
       "slug": "fence",
-      "label": "Fencing",
-      "order": 6,
+      "label": "Fence",
+      "order": 99,
       "projectCount": 2,
       "projects": [
         {
@@ -618,7 +618,7 @@
       "id": "flooring",
       "slug": "flooring",
       "label": "Flooring",
-      "order": 7,
+      "order": 99,
       "projectCount": 2,
       "projects": [
         {
@@ -751,8 +751,8 @@
     {
       "id": "pool",
       "slug": "pool",
-      "label": "Pool & Outdoor",
-      "order": 9,
+      "label": "Pool",
+      "order": 99,
       "projectCount": 2,
       "projects": [
         {

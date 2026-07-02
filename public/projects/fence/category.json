@@ -1,1 +1,4 @@
-{ "label": "Fencing", "order": 6 }
+﻿{
+    "order":  7,
+    "label":  "Fencing"
+}
