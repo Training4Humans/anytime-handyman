@@ -12,15 +12,21 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 /* ── Types ───────────────────────────────────────────────── */
+interface ProjectImage {
+  src: string;
+  isBefore: boolean;
+}
+
 interface Project {
   id: string;
   slug: string;
   title: string;
   description: string;
   date: string;
+  location: string;
   tags: string[];
   cover: string;
-  images: string[];
+  images: ProjectImage[];
   imageCount: number;
 }
 
@@ -231,15 +237,16 @@ export default function ProjectsPage() {
             <div className={styles.modalGrid}>
               {activeProject.images.map((img, i) => (
                 <div
-                  key={img}
-                  className={styles.modalThumb}
+                  key={img.src}
+                  className={`${styles.modalThumb} ${img.isBefore ? styles.modalThumbBefore : ""}`}
                   onClick={() => setLightbox({ project: activeProject, imgIndex: i })}
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => e.key === "Enter" && setLightbox({ project: activeProject, imgIndex: i })}
                   id={`thumb-${activeProject.id}-${i}`}
                 >
-                  <Image src={img} alt={`${activeProject.title} photo ${i + 1}`} fill className={styles.modalThumbPhoto} sizes="25vw" />
+                  <Image src={img.src} alt={`${activeProject.title} photo ${i + 1}`} fill className={styles.modalThumbPhoto} sizes="25vw" />
+                  {img.isBefore && <span className={styles.beforeBadge}>Before</span>}
                   <div className={styles.modalThumbOverlay}><span className={styles.modalThumbIcon}>⊕</span></div>
                 </div>
               ))}
@@ -262,7 +269,7 @@ export default function ProjectsPage() {
             <button className={`${styles.lightboxNav} ${styles.lightboxPrev}`} onClick={() => setLightbox((p) => p ? { ...p, imgIndex: p.imgIndex - 1 } : p)}>‹</button>
           )}
           <div className={styles.lightboxImg}>
-            <Image src={lightbox.project.images[lightbox.imgIndex]} alt={`Photo ${lightbox.imgIndex + 1}`} fill className={styles.lightboxPhoto} sizes="100vw" priority />
+            <Image src={lightbox.project.images[lightbox.imgIndex].src} alt={`Photo ${lightbox.imgIndex + 1}`} fill className={styles.lightboxPhoto} sizes="100vw" priority />
           </div>
           {lightbox.imgIndex < lightbox.project.images.length - 1 && (
             <button className={`${styles.lightboxNav} ${styles.lightboxNext}`} onClick={() => setLightbox((p) => p ? { ...p, imgIndex: p.imgIndex + 1 } : p)}>›</button>

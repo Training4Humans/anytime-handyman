@@ -1,16 +1,27 @@
 {
-  "_readme": "Copy this file to project.json inside any project folder. Remove this _readme line.",
+  "_readme": [
+    "HOW TO ADD A PROJECT:",
+    "1. Drop your images into this folder.",
+    "2. Rename them using this convention:",
+    "     001_subject_a.jpg  ← after shot  (shown first, used as thumbnail)",
+    "     002_subject_a.jpg  ← after shot  (shown second)",
+    "     003_subject_b.jpg  ← before shot (shown last, never the thumbnail)",
+    "   Rules:",
+    "     - Start with 001, 002, 003 … to control display order",
+    "     - End with _a for AFTER shots, _b for BEFORE shots",
+    "     - The subject word(s) in the middle are optional but helpful",
+    "3. Fill in the fields below and save as project.json",
+    "4. Run: npm run portfolio"
+  ],
   "title": "Project Title",
-  "description": "2-3 sentences describing the scope of work, the challenge, and the outcome.",
+  "description": "2-3 sentences describing the scope of work and the result.",
   "date": "2024-06",
   "location": "Austin, TX",
-  "coverIndex": 0,
-  "beforeImages": [],
+  "tags": ["category", "keyword"],
   "materials": [
-    "Material or product used (e.g. LVP flooring, cedar wood, pool-grade epoxy)"
+    "Material used (e.g. LVP flooring, cedar, epoxy base coat)"
   ],
   "techniques": [
-    "Method or skill applied (e.g. tongue & groove installation, color-flake broadcast)"
-  ],
-  "tags": ["category", "keyword"]
+    "Skill applied (e.g. tongue & groove installation, color-flake broadcast)"
+  ]
 }

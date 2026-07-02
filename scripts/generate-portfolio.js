@@ -123,14 +123,40 @@ for (const catDir of categoryFolders) {
       ? readJson(path.join(projPath, "project.json"))
       : {};
 
-    const images = getImages(projPath);
+    const diskImages = getImages(projPath);
 
-    if (images.length === 0) {
+    if (diskImages.length === 0) {
       console.warn(`  ⚠️  No images in ${catDir.name}/${projDir.name} — skipping`);
       continue;
     }
 
-    const coverIndex = Math.min(meta.coverIndex ?? 0, images.length - 1);
+    // Detect role from filename suffix:
+    //   001_deck_a.jpg  → after  (shown first, eligible as cover)
+    //   002_deck_b.jpg  → before (never the cover, shown at end)
+    //   anything else   → after  (default)
+    function roleFromFilename(filename) {
+      const base = path.basename(filename, path.extname(filename)).toLowerCase();
+      if (base.endsWith("_b")) return "before";
+      return "after";
+    }
+
+    const imageList = diskImages
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+      .map((f) => ({ file: f, isBefore: roleFromFilename(f) === "before" }));
+
+    // If manifest is present, use it to override order/role (power-user escape hatch)
+    let finalList = imageList;
+    if (Array.isArray(meta.images) && meta.images.length > 0) {
+      const manifestFiles = new Set(meta.images.map((e) => e.file));
+      const manifestList  = meta.images
+        .filter((e) => diskImages.includes(e.file))
+        .map((e) => ({ file: e.file, isBefore: e.role === "before" }));
+      const extras = imageList.filter((e) => !manifestFiles.has(e.file));
+      finalList = [...manifestList, ...extras];
+    }
+
+    // Cover = first after image
+    const coverFile = (finalList.find((e) => !e.isBefore) ?? finalList[0]).file;
 
     const project = {
       id:          `${slugify(catDir.name)}--${slugify(projDir.name)}`,
@@ -142,15 +168,19 @@ for (const catDir of categoryFolders) {
       tags:        meta.tags        ?? [],
       techniques:  meta.techniques  ?? [],
       materials:   meta.materials   ?? [],
-      beforeImages: meta.beforeImages ?? [],
-      cover:       `/projects/${catDir.name}/${projDir.name}/${images[coverIndex]}`,
-      images:      images.map((f) => `/projects/${catDir.name}/${projDir.name}/${f}`),
-      imageCount:  images.length,
+      cover:       `/projects/${catDir.name}/${projDir.name}/${coverFile}`,
+      images:      finalList.map((e) => ({
+        src:      `/projects/${catDir.name}/${projDir.name}/${e.file}`,
+        isBefore: e.isBefore,
+      })),
+      imageCount:  finalList.length,
     };
 
     projects.push(project);
-    totalImages += images.length;
-    console.log(`  ✓  [${catLabel}] ${project.title}  (${project.imageCount} photo${project.imageCount !== 1 ? "s" : ""})`);
+    totalImages += finalList.length;
+    const beforeCount = finalList.filter((e) => e.isBefore).length;
+    const beforeNote  = beforeCount > 0 ? `, ${beforeCount} before` : "";
+    console.log(`  ✓  [${catLabel}] ${project.title}  (${project.imageCount} photo${project.imageCount !== 1 ? "s" : ""}${beforeNote})`);
   }
 
   if (projects.length === 0) continue;
