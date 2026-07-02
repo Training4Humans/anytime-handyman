@@ -190,33 +190,44 @@ function PencilCircle() {
       focusable="false"
     >
       <defs>
-        <filter id="nav-pencil-rough" x="-15%" y="-30%" width="130%" height="160%">
+        <filter id="nav-pencil-rough" x="-18%" y="-35%" width="136%" height="170%">
+          {/* type="turbulence" is jagged/sharp vs fractalNoise which is smooth */}
           <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.02 0.04"
-            numOctaves="2"
+            type="turbulence"
+            baseFrequency="0.055 0.085"
+            numOctaves="4"
             seed="4"
             result="noise"
           />
           <feDisplacementMap
             in="SourceGraphic"
             in2="noise"
-            scale="1.8"
+            scale="5.5"
             xChannelSelector="R"
             yChannelSelector="G"
           />
         </filter>
       </defs>
-      {/* Clean ellipse — turbulence filter adds the pencil roughness */}
+      {/* Primary pencil stroke */}
       <ellipse
-        cx="100" cy="25"
-        rx="90" ry="19"
+        cx="100" cy="25" rx="90" ry="19"
         stroke="var(--gold)"
-        strokeWidth="2.6"
+        strokeWidth="1.8"
         strokeLinecap="round"
         fill="none"
         filter="url(#nav-pencil-rough)"
         className={styles.pencilPath}
+      />
+      {/* Second pass: lighter, slightly smaller — layered pencil strokes */}
+      <ellipse
+        cx="100" cy="25" rx="88" ry="17"
+        stroke="var(--gold)"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeOpacity="0.45"
+        fill="none"
+        filter="url(#nav-pencil-rough)"
+        className={styles.pencilPath2}
       />
     </svg>
   );

@@ -136,6 +136,13 @@
   animation-delay: 0.06s;
 }
 
+.pencilPath2 {
+  stroke-dasharray: 415;
+  stroke-dashoffset: 415;
+  animation: drawPencilCircle 0.48s ease-out forwards;
+  animation-delay: 0.22s;
+}
+
 @keyframes drawPencilCircle {
   to { stroke-dashoffset: 0; }
 }
