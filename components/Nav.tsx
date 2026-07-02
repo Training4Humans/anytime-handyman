@@ -179,41 +179,41 @@ export default function Nav() {
   );
 }
 
-/* ── Pencil circle: active-page indicator ─────────────────── */
+/* ── Pencil circle: active-page indicator ──────────────── */
 function PencilCircle() {
   return (
     <svg
       className={styles.pencilCircle}
-      viewBox="0 0 200 56"
+      viewBox="0 0 200 50"
       preserveAspectRatio="none"
       aria-hidden="true"
       focusable="false"
     >
       <defs>
-        <filter id="nav-pencil-rough" x="-12%" y="-25%" width="124%" height="150%">
+        <filter id="nav-pencil-rough" x="-15%" y="-30%" width="130%" height="160%">
           <feTurbulence
             type="fractalNoise"
-            baseFrequency="0.04 0.08"
-            numOctaves="3"
-            seed="7"
+            baseFrequency="0.02 0.04"
+            numOctaves="2"
+            seed="4"
             result="noise"
           />
           <feDisplacementMap
             in="SourceGraphic"
             in2="noise"
-            scale="3.5"
+            scale="1.8"
             xChannelSelector="R"
             yChannelSelector="G"
           />
         </filter>
       </defs>
-      {/* Slightly wobbly oval — never a perfect ellipse */}
-      <path
-        d="M 22,27 C 17,9 40,1 70,1 C 103,1 152,3 174,11 C 190,17 199,26 193,38 C 187,51 160,57 126,58 C 86,59 44,57 22,50 C 8,45 7,43 22,27"
+      {/* Clean ellipse — turbulence filter adds the pencil roughness */}
+      <ellipse
+        cx="100" cy="25"
+        rx="90" ry="19"
         stroke="var(--gold)"
-        strokeWidth="2.4"
+        strokeWidth="2.6"
         strokeLinecap="round"
-        strokeLinejoin="round"
         fill="none"
         filter="url(#nav-pencil-rough)"
         className={styles.pencilPath}
