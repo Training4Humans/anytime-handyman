@@ -76,12 +76,23 @@ export default function ProjectsPage() {
   }, [handleKey]);
 
   // Reset carousel and auto-advance when a project opens
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
   useEffect(() => { setModalSlide(0); }, [activeProject]);
   useEffect(() => {
     if (!activeProject || activeProject.images.length <= 1) return;
     const t = setInterval(() => setModalSlide((i) => (i + 1) % activeProject.images.length), 4000);
     return () => clearInterval(t);
   }, [activeProject]);
+
+  const swipeNext = () => activeProject && setModalSlide((i) => Math.min(i + 1, activeProject.images.length - 1));
+  const swipePrev = () => setModalSlide((i) => Math.max(i - 1, 0));
+  const handleTouchStart = (e: React.TouchEvent) => setTouchStartX(e.touches[0].clientX);
+  const handleTouchEnd   = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const dx = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(dx) > 40) dx > 0 ? swipeNext() : swipePrev();
+    setTouchStartX(null);
+  };
 
   // All projects flattened for "all" view
   const allProjects = portfolio?.categories.flatMap((c) => c.projects) ?? [];
@@ -245,10 +256,12 @@ export default function ProjectsPage() {
 
             {/* ── Carousel ── */}
             <div className={styles.modalCarousel}>
-              {/* Main slide */}
+              {/* Main slide — swipeable on mobile */}
               <div
                 className={styles.carouselSlide}
                 onClick={() => setLightbox({ project: activeProject, imgIndex: modalSlide })}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
                 role="button"
                 tabIndex={0}
                 aria-label="Expand photo"

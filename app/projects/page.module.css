@@ -669,34 +669,35 @@
 
 .beforeBadge {
   position: absolute;
-  top: 0.4rem;
-  left: 0.4rem;
-  background: rgba(0,0,0,0.7);
+  top: 0.6rem;
+  left: 0.6rem;
+  background: rgba(0,0,0,0.72);
   border: 1px solid rgba(255,255,255,0.3);
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.9);
   font-family: var(--font-ui);
-  font-size: 0.55rem;
+  font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 0.2rem 0.4rem;
-  border-radius: 3px;
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
   z-index: 2;
+  pointer-events: none;
 }
 
 .afterBadge {
   position: absolute;
-  bottom: 0.4rem;
-  left: 0.4rem;
+  top: 0.6rem;
+  left: 0.6rem;
   background: var(--gold);
   color: var(--black);
   font-family: var(--font-ui);
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
   z-index: 2;
   pointer-events: none;
 }
@@ -784,16 +785,39 @@
 
 /* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .projectGrid  { grid-template-columns: repeat(2, 1fr); }
-  .modalGrid    { grid-template-columns: repeat(3, 1fr); }
+  .projectGrid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 640px) {
-  .projectGrid  { grid-template-columns: 1fr; }
-  .modalGrid    { grid-template-columns: repeat(2, 1fr); }
-  .modalInner   { padding: 2rem 1.25rem; }
+@media (max-width: 768px) {
+  /* Modal goes full-screen on mobile */
+  .modal        { padding: 0; align-items: flex-end; }
+  .modalInner   {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    padding: 1.5rem 1rem 1rem;
+    max-width: 100%;
+    max-height: 95dvh;
+    overflow-y: auto;
+  }
+  .modalTitle   { font-size: 1.25rem; }
+  .modalDesc    { font-size: 0.82rem; }
+  .modalHeader  { margin-bottom: 1rem; }
+
+  /* Carousel */
+  .carouselSlide { max-height: 260px; }
+  .carouselNav   { width: 36px; height: 36px; font-size: 1.2rem; }
+  .carouselPrev  { left: 0.4rem; }
+  .carouselNext  { right: 0.4rem; }
+
+  /* Thumbnail strip — slightly smaller on mobile */
+  .carouselThumb { flex: 0 0 64px; height: 48px; }
+
+  /* Lightbox */
   .lightboxImg  { width: 98vw; height: 70vh; }
   .lightboxNav  { width: 40px; height: 40px; }
   .lightboxPrev { left: 0.5rem; }
   .lightboxNext { right: 0.5rem; }
+}
+
+@media (max-width: 480px) {
+  .projectGrid  { grid-template-columns: 1fr; }
 }
