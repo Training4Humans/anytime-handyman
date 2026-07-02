@@ -248,7 +248,7 @@ export default function ProjectsPage() {
                   <Image src={img.src} alt={`${activeProject.title} photo ${i + 1}`} fill className={styles.modalThumbPhoto} sizes="25vw" />
                   {img.isBefore
                     ? <span className={styles.beforeBadge}>Before</span>
-                    : <span className={styles.afterBadge}>Anytime Handyman</span>
+                    : <span className={styles.afterBadge}>After</span>
                   }
                   <div className={styles.modalThumbOverlay}><span className={styles.modalThumbIcon}>⊕</span></div>
                 </div>
