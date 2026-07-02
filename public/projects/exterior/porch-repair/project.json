@@ -7,5 +7,6 @@
   "beforeImages": [3],
   "materials": ["Pressure-treated decking boards", "Pressure-treated posts", "Galvanized fasteners", "Exterior wood filler"],
   "techniques": ["Rot removal and structural assessment", "Post replacement", "Decking board installation", "Surface finish matching"],
-  "tags": ["exterior", "porch", "repair", "structural"]
+  "tags": ["exterior", "porch", "repair", "structural"],
+  "imagePosition": "center bottom"
 }

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-02T20:59:07.509Z",
+  "generated": "2026-07-02T21:03:27.477Z",
   "categoryCount": 7,
   "projectCount": 17,
   "imageCount": 69,
@@ -37,6 +37,7 @@
             "Transition strips",
             "PVC baseboard"
           ],
+          "imagePosition": "center",
           "cover": "/projects/flooring/floor-001/001_floor_a.jpg",
           "images": [
             {
@@ -107,6 +108,7 @@
             "Wood filler",
             "Stain and polyurethane"
           ],
+          "imagePosition": "center",
           "cover": "/projects/flooring/floor-002/001_floor_a.jpg",
           "images": [
             {
@@ -169,6 +171,7 @@
             "Composite decking boards",
             "Post-mount railing"
           ],
+          "imagePosition": "center",
           "cover": "/projects/deck/deck-001/001_deck_a.jpg",
           "images": [
             {
@@ -210,6 +213,7 @@
             "Deck screws",
             "Solid stain"
           ],
+          "imagePosition": "center",
           "cover": "/projects/deck/deck-002/001_deck_a.jpg",
           "images": [
             {
@@ -277,6 +281,7 @@
             "Dog-ear cedar pickets",
             "Concrete mix"
           ],
+          "imagePosition": "center",
           "cover": "/projects/fence/fence-001/001_fence_a.jpg",
           "images": [
             {
@@ -317,6 +322,7 @@
             "Treated pine rails",
             "Galvanized nails"
           ],
+          "imagePosition": "center",
           "cover": "/projects/fence/fence-002/001_fence_a.jpg",
           "images": [
             {
@@ -360,6 +366,7 @@
             "Decorative color flakes",
             "Clear polyurethane topcoat"
           ],
+          "imagePosition": "center",
           "cover": "/projects/epoxy/epoxy-001/001_epoxy_a.jpg",
           "images": [
             {
@@ -405,6 +412,7 @@
             "Multi-color vinyl flakes",
             "UV-resistant clear coat"
           ],
+          "imagePosition": "center",
           "cover": "/projects/epoxy/epoxy-002/002_epoxy_a.jpg",
           "images": [
             {
@@ -466,6 +474,7 @@
             "Soft-close hinges",
             "Bar-pull hardware"
           ],
+          "imagePosition": "center",
           "cover": "/projects/cabinets/cabinets-002/001_cabinets_a.jpg",
           "images": [
             {
@@ -509,6 +518,7 @@
             "Shaker-style cabinet doors",
             "Brushed nickel hardware"
           ],
+          "imagePosition": "center",
           "cover": "/projects/cabinets/cabinets-001/01_Cabinets1_a.jpg",
           "images": [
             {
@@ -570,6 +580,7 @@
             "Post anchors",
             "Hidden fasteners"
           ],
+          "imagePosition": "center",
           "cover": "/projects/pool/pool-decks/001_pooldecks_a.jpg",
           "images": [
             {
@@ -621,6 +632,7 @@
             "Pool liner",
             "Filter and pump system"
           ],
+          "imagePosition": "center",
           "cover": "/projects/pool/pool-assembly/001_pool_a.jpg",
           "images": [
             {
@@ -670,6 +682,7 @@
             "Exterior caulk",
             "Exterior paint"
           ],
+          "imagePosition": "center",
           "cover": "/projects/exterior/accents/001_accents_a.jpg",
           "images": [
             {
@@ -704,6 +717,7 @@
             "Steel handrail brackets",
             "Concrete anchors"
           ],
+          "imagePosition": "center",
           "cover": "/projects/exterior/stairs/001_stairs_a.jpg",
           "images": [
             {
@@ -749,6 +763,7 @@
             "Shims",
             "Finish nails"
           ],
+          "imagePosition": "center",
           "cover": "/projects/exterior/door-install/001_doors_a.jpg",
           "images": [
             {
@@ -786,6 +801,7 @@
             "Weatherproof connectors",
             "Gutter clips and hooks"
           ],
+          "imagePosition": "center",
           "cover": "/projects/exterior/christmas-lights/001_lights_a.jpg",
           "images": [
             {
@@ -820,6 +836,7 @@
             "Galvanized fasteners",
             "Exterior wood filler"
           ],
+          "imagePosition": "center bottom",
           "cover": "/projects/exterior/porch-repair/001_porch_a.jpg",
           "images": [
             {

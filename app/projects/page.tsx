@@ -19,6 +19,7 @@ interface Project {
   location: string;
   tags: string[];
   cover: string;
+  imagePosition: string;
   images: ProjectImage[];
   imageCount: number;
 }

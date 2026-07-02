@@ -104,7 +104,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gray-800);
+  color: var(--gold);
 }
 
 /* ── Gallery ─────────────────────────────────────────────── */
@@ -992,4 +992,45 @@
 
 @media (max-width: 480px) {
   .projectGrid  { grid-template-columns: 1fr; }
+}
+
+/* ── Magazine: mobile overrides ───────────────────────────── */
+@media (max-width: 768px) {
+  /* Stack feature + side vertically */
+  .magLayout { grid-template-columns: 1fr; }
+
+  /* Shorter feature on mobile so it doesn't eat the whole screen */
+  .magFeature { height: 280px; }
+
+  /* Side cards tall enough to tap comfortably */
+  .magSideCard { min-height: 180px; }
+
+  /* Larger text in cards */
+  .magTitle     { font-size: 1.3rem; }
+  .magSideTitle { font-size: 1rem; }
+  .magEyebrow   { font-size: 0.72rem; }
+  .magMeta      { font-size: 0.72rem; }
+  .magDesc      { font-size: 0.85rem; }
+
+  /* Bigger section headers */
+  .magSectionTitle { font-size: 1.25rem; }
+  .magSectionCount { font-size: 0.75rem; }
+
+  /* Overflow grid stacks to 2 cols */
+  .magOverflow { grid-template-columns: repeat(2, 1fr); }
+  .magOverflowCard { height: 160px; }
+
+  /* Hero stat line */
+  .heroCount { font-size: 0.82rem; }
+
+  /* Filter nav wraps more comfortably */
+  .filterRow { gap: 0.4rem; }
+  .filterBtn { font-size: 0.72rem; padding: 0.45rem 0.7rem; }
+}
+
+@media (max-width: 480px) {
+  .magFeature   { height: 240px; }
+  .magSideCard  { min-height: 160px; }
+  .magOverflow  { grid-template-columns: 1fr; }
+  .magOverflowCard { height: 180px; }
 }

@@ -159,21 +159,22 @@ for (const catDir of categoryFolders) {
     const coverFile = (finalList.find((e) => !e.isBefore) ?? finalList[0]).file;
 
     const project = {
-      id:          `${slugify(catDir.name)}--${slugify(projDir.name)}`,
-      slug:        projDir.name,
-      title:       meta.title       ?? titleFromSlug(projDir.name),
-      description: meta.description ?? "",
-      date:        meta.date        ?? "",
-      location:    meta.location    ?? "",
-      tags:        meta.tags        ?? [],
-      techniques:  meta.techniques  ?? [],
-      materials:   meta.materials   ?? [],
-      cover:       `/projects/${catDir.name}/${projDir.name}/${coverFile}`,
-      images:      finalList.map((e) => ({
+      id:            `${slugify(catDir.name)}--${slugify(projDir.name)}`,
+      slug:          projDir.name,
+      title:         meta.title         ?? titleFromSlug(projDir.name),
+      description:   meta.description   ?? "",
+      date:          meta.date          ?? "",
+      location:      meta.location      ?? "",
+      tags:          meta.tags          ?? [],
+      techniques:    meta.techniques    ?? [],
+      materials:     meta.materials     ?? [],
+      imagePosition: meta.imagePosition ?? "center",
+      cover:         `/projects/${catDir.name}/${projDir.name}/${coverFile}`,
+      images:        finalList.map((e) => ({
         src:      `/projects/${catDir.name}/${projDir.name}/${e.file}`,
         isBefore: e.isBefore,
       })),
-      imageCount:  finalList.length,
+      imageCount:    finalList.length,
     };
 
     projects.push(project);
