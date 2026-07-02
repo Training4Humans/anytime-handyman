@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-02T19:41:48.720Z",
+  "generated": "2026-07-02T19:44:37.385Z",
   "categoryCount": 8,
   "projectCount": 17,
   "imageCount": 72,
@@ -77,11 +77,11 @@
             "Shaker-style cabinet doors",
             "Brushed nickel hardware"
           ],
-          "cover": "/projects/cabinets/cabinets-001/02_Cabinets1_a.jpg",
+          "cover": "/projects/cabinets/cabinets-001/01_Cabinets1_a.jpg",
           "images": [
             {
-              "src": "/projects/cabinets/cabinets-001/01_Cabinets1_b.jpg",
-              "isBefore": true
+              "src": "/projects/cabinets/cabinets-001/01_Cabinets1_a.jpg",
+              "isBefore": false
             },
             {
               "src": "/projects/cabinets/cabinets-001/02_Cabinets1_a.jpg",
@@ -96,8 +96,8 @@
               "isBefore": false
             },
             {
-              "src": "/projects/cabinets/cabinets-001/05_Cabinets1_a.jpg",
-              "isBefore": false
+              "src": "/projects/cabinets/cabinets-001/05_Cabinets1_b.jpg",
+              "isBefore": true
             }
           ],
           "imageCount": 5
