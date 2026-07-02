@@ -84,10 +84,6 @@ export default function MaintenancePromo() {
               </div>
             </div>
 
-            <div className={styles.pricing}>
-              <p className={styles.pricingText}>Pricing personalized to your home.</p>
-              <p className={styles.pricingNote}>No contracts. Cancel anytime.</p>
-            </div>
 
             <div className={styles.ctas}>
               <Link href="/maintenance" className={styles.ctaPrimary}>
