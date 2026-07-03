@@ -37,7 +37,7 @@ export default function ServicesPage() {
   return (
     <main className={styles.main}>
 
-      {/* ------------------------------------------ */}
+      {/* ── Hero ─────────────────────────────────────────────── */}
       <section className={styles.hero}>
         <Image
           src="/images/services-hero.jpg"
@@ -66,7 +66,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ΓöÇΓöÇ Category Sections ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */}
+      {/* ── Category Sections ────────────────────────────────── */}
       {categories.map((cat, i) => {
         const catServices = services.filter((s) => s.category === cat.id);
         const isEven = i % 2 === 0;
@@ -96,7 +96,7 @@ export default function ServicesPage() {
                 <ul className={styles.serviceList}>
                   {catServices.map((s) => (
                     <li key={s.id} className={styles.serviceItem}>
-                      <span className={styles.serviceTick}>ΓÇó</span>
+                      <span className={styles.serviceTick}>•</span>
                       <div>
                         <p className={styles.serviceTitle}>{s.title}</p>
                         <p className={styles.serviceDesc}>{s.description}</p>
@@ -106,7 +106,7 @@ export default function ServicesPage() {
                 </ul>
 
                 <Link href="/contact" className={styles.categoryCta}>
-                  Get a Quote for {cat.label} Work ΓåÆ
+                  Get a Quote for {cat.label} Work →
                 </Link>
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function ServicesPage() {
         );
       })}
 
-      {/* ΓöÇΓöÇ Bottom CTA ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */}
+      {/* ── Bottom CTA ───────────────────────────────────────── */}
       <section className={styles.cta}>
         <div className={styles.ctaBg} aria-hidden="true" />
         <div className={`container ${styles.ctaContent}`}>
@@ -130,7 +130,7 @@ export default function ServicesPage() {
               Call {businessInfo.contact.phone}
             </a>
             <Link href="/contact" className="btn btn--outline" id="services-cta-quote">
-              Request a Free Quote ΓåÆ
+              Request a Free Quote →
             </Link>
           </div>
         </div>
